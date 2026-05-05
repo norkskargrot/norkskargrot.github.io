@@ -13,8 +13,6 @@
         gtag('config', 'G-BFM54NSSW0');
       </script>
 
-      <!---->
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
       <!-- Enable responsiveness on mobile devices-->
@@ -25,7 +23,7 @@
       <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
       <!-- Swup for fancy page transitions -->
-      <script src="https://unpkg.com/swup@4"></script>
+      <script src="{{ get_url(path="swup.umd.js", trailing_slash=false) }}"></script>
       <script>
         const swup = new Swup();
       </script>
@@ -34,8 +32,7 @@
       <link rel="stylesheet" href="{{ get_url(path="print.css", trailing_slash=false) }}" media="print">
       <link rel="stylesheet" href="{{ get_url(path="poole.css", trailing_slash=false) }}">
       <link rel="stylesheet" href="{{ get_url(path="hyde.css", trailing_slash=false) }}">
-      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
       {% if config.generate_feeds %}
         {% for feed in config.feed_filenames %}
           <link rel="alternate" type={% if feed == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=feed) | safe }}">
