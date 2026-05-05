@@ -2,7 +2,7 @@ base_url = "https://nic.dockerz.net"
 compile_sass = true
 title = "Nic Docker"
 description = "I'm a designer and developer with a love for crafting engaging experiences."
-generate_feed = true
+generate_feeds = true
 
 [extra]
 hyde_sticky = true
@@ -15,7 +15,7 @@ hyde_links = [
 ]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+
+[markdown.highlighting]
 highlight_code = true
-highlight_theme = "boron"
+theme = "nord"
