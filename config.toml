@@ -1,7 +1,7 @@
 base_url = "https://nic.dockerz.net"
 compile_sass = true
 title = "Nic Docker"
-description = "I'm a designer and developer with a love for crafting engaging experiences."
+description = "Building skills so I can build things. Design, dev, board games, video games, other stuff too. Welcome to my little corner of the internet, it's nice to have you here."
 generate_feeds = true
 
 [extra]

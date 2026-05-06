@@ -1,39 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %} {{ section.title }} {% endblock title %}
+{% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
+
+{% block sidebar %}{% endblock sidebar %}
 
 {% block content %}
-<div class="content">
-  <div class="transition-content">
-    {{ section.content | safe }}
-    <div class="posts">
+<div class="home-page">
+  <div class="home-inner">
+    <div class="posts-grid">
       {% for page in section.pages %}
-        <div class="post">
-          <a href="{{ page.permalink }}">
-            <img class="postimage" src="{{ page.extra.headerimage }}">
-            <h1 class="post-title">
-          </a>
-            <a href="{{ page.permalink }}">
-              {{ page.title | safe }}
-            </a>
-          </h1>
-          {% if page.date %} 
-          <span class="post-date">{{ page.date | date(format="%d-%m-%Y") }}</span>
-          {% endif %} 
-          <div class="tags-container">
-            {% for tag in page.extra.tags  %}
-              <div class="tags-item">
-                {{ tag }}
-              </div>
-            {% endfor %}
-          </div>
-          {{ page.description }}
-
-          <div class="more-info-container">
-            <a class="hyperlink" href="{{ page.permalink }}"> More info > </a>
-          </div>
-          
+      <a class="post-card" href="{{ page.permalink }}">
+        <img class="post-card-image" src="{{ page.extra.headerimage }}" alt="{{ page.title }}">
+        <div class="post-card-info">
+          <div class="post-card-title">{{ page.title }}</div>
+          <div class="post-card-desc">{{ page.description }}</div>
         </div>
+      </a>
       {% endfor %}
     </div>
   </div>

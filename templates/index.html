@@ -1,6 +1,36 @@
 {% extends "base.html" %}
-{% import "sidebars.html" as macros %}
 
-{% block sidebar %}
-    {{ macros::defaultSidebar() }}
-{% endblock sidebar %}
+{% block sidebar %}{% endblock sidebar %}
+
+{% block content %}
+{% set blog = get_section(path="blog/_index.md") %}
+<div class="home-page">
+  <div class="home-inner">
+
+    <header class="home-header">
+      <div class="home-header-top">
+        <h1 class="home-name">{{ config.title }}</h1>
+        <img class="home-avatar" src="/images/profilePicture.png" alt="{{ config.title }}">
+      </div>
+      <p class="home-bio">{{ config.description }}</p>
+      <p class="home-contact">
+        Contact me <a href="https://twitter.com/D_Nocker">@D_Nocker</a>, or by
+        <a href="mailto:nick@dockerz.net">&#9993; email</a>.
+      </p>
+    </header>
+
+    <div class="posts-grid">
+      {% for page in blog.pages %}
+      <a class="post-card" href="{{ page.permalink }}">
+        <img class="post-card-image" src="{{ page.extra.headerimage }}" alt="{{ page.title }}">
+        <div class="post-card-info">
+          <div class="post-card-title">{{ page.title }}</div>
+          <div class="post-card-desc">{{ page.description }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endblock content %}

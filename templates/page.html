@@ -1,23 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %} {{ page.title }} {% endblock title %}
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock title %}
+
+{% block sidebar %}{% endblock sidebar %}
 
 {% block content %}
-  <div class="content">
-    <div class="transition-content">
-      <h1 class="post-title">{{ page.title }}</h1>
-      {% if page.date %}
-        <span class="post-date">{{ page.date | date(format="%d-%m-%Y") }}</span>
-      {% endif %}
-      <div class="tags-container">
-        {% for tag in page.extra.tags  %}
-          <div class="tags-item">
-            {{ tag }}
-          </div>
-        {% endfor %}
-      </div>
-      {{ page.content | safe }}
-    </div>
-  </div>
+<div class="post-page">
+  <a class="back-btn" href="{{ config.base_url }}">&lsaquo;</a>
+  <article class="post-article">
+    <h1 class="post-article-title">{{ page.title }}</h1>
+    {% if page.extra.headerimage %}
+    <img class="post-header-img" src="{{ page.extra.headerimage }}" alt="{{ page.title }}">
+    {% endif %}
+    {{ page.content | safe }}
+  </article>
+</div>
 {% endblock content %}
-

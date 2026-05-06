@@ -1,411 +1,348 @@
-/*
- *                        ___
- *                       /\_ \
- *  _____     ___     ___\//\ \      __
- * /\ '__`\  / __`\  / __`\\ \ \   /'__`\
- * \ \ \_\ \/\ \_\ \/\ \_\ \\_\ \_/\  __/
- *  \ \ ,__/\ \____/\ \____//\____\ \____\
- *   \ \ \/  \/___/  \/___/ \/____/\/____/
- *    \ \_\
- *     \/_/
- *
- * Designed, built, and released under MIT license by @mdo. Learn more at
- * https://github.com/poole/poole.
- */
-
-
-/*
- * Contents
- *
- * Body resets
- * Custom type
- * Messages
- * Container
- * Masthead
- * Posts and pages
- * Footnotes
- * Pagination
- * Reverse layout
- * Themes
- */
-
-
-/*
- * Body resets
- *
- * Update the foundational and global aspects of the page.
- */
-
 * {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
 }
 
-html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+body {
+  font-family: 'Lato', sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  background: #FAFAFA;
+  color: rgba(0, 0, 0, 0.9);
 }
 
-body {
-  color: #FFE8C5;
-  background-color: #fff;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-}
-
-/* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #FFE8C5;
-  text-decoration: none;
-}
-
-p a {
-  text-decoration: underline;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 300;
-  line-height: 1.25;
-  color: #FFE8C5;
-  text-rendering: optimizeLegibility;
-  text-transform: uppercase;
-}
-h1 {
-  font-size: 3rem;
-}
-h2 {
-  margin-top: 2rem;
-  font-size: 2rem;
-}
-h3 {
-  margin-top: 1.5rem;
-  font-size: 1.5rem;
-}
-h4, h5, h6 {
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-
-/* Body text */
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-strong {
-  color: #FFE8C5;
-}
-
-
-/* Lists */
-ul, ol, dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-bottom: .5rem;
-}
-
-/* Misc */
-hr {
-  position: relative;
-  margin: 1.5rem 0;
-  border: 0;
-  border-top: 1px solid #FFE8C5;
-  border-bottom: 1px solid #FFE8C5;
-}
-
-abbr {
-  font-size: 85%;
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
-}
-abbr[title] {
-  cursor: help;
-  border-bottom: 1px dotted #e5e5e5;
-}
-
-/* Code */
-code,
-pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
-}
-code {
-  padding: .25em .5em;
-  font-size: 85%;
-  color: #bf616a;
-  background-color: #f9f9f9;
-  border-radius: 3px;
-}
-pre {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: .8rem;
-  line-height: 1.4;
-  overflow-x: auto;
-  background-color: #101010;
-}
-pre code {
-  padding: 0;
-  font-size: 100%;
   color: inherit;
-  background-color: transparent;
-}
-.highlight {
-  margin-bottom: 1rem;
-  border-radius: 4px;
-}
-.highlight pre {
-  margin-bottom: 0;
-}
-
-/* Quotes */
-blockquote {
-  padding: .5rem 1rem;
-  margin: .8rem 0;
-  color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5;
-}
-blockquote p:last-child {
-  margin-bottom: 0;
-}
-@media (min-width: 30em) {
-  blockquote {
-    padding-right: 5rem;
-    padding-left: 1.25rem;
-  }
+  text-decoration: none;
 }
 
 img {
-  display: block;
-  margin: 0 0 1rem;
-  border-radius: 5px;
   max-width: 100%;
+  display: block;
 }
 
-/* Tables */
-table {
-  margin-bottom: 1rem;
+
+/* ─────────────────────────────────────────
+   Home page
+───────────────────────────────────────── */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px 64px;
+  min-height: 100vh;
+}
+
+.home-inner {
   width: 100%;
-  border: 1px solid #e5e5e5;
-  border-collapse: collapse;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
 }
-td,
-th {
-  padding: .25rem .5rem;
-  border: 1px solid #e5e5e5;
+
+/* Header */
+.home-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+
+.home-header-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.home-name {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+}
+
+.home-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.home-bio {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.home-contact {
+  margin: 0;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.home-contact a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: underline;
+}
+
+/* Posts grid */
+.posts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 32px;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.post-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  background: #e8e8e8;
+}
+
+.post-card-info {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px 20px;
+  gap: 12px;
+}
+
+.post-card-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.post-card-desc {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 
-/*
- * Custom type
- *
- * Extend paragraphs with `.lead` for larger introductory text.
- */
+/* ─────────────────────────────────────────
+   Post page
+───────────────────────────────────────── */
 
-.lead {
-  font-size: 1.25rem;
+.post-page {
+  min-height: 100vh;
+  padding: 64px 24px 80px;
+}
+
+.back-btn {
+  position: fixed;
+  top: 24px;
+  left: 28px;
+  font-size: 32px;
   font-weight: 300;
-}
-
-
-/*
- * Messages
- *
- * Show alert messages to users. You may add it to single elements like a `<p>`,
- * or to a parent if there are multiple elements to show.
- */
-
-.message {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  color: #717171;
-  background-color: #f9f9f9;
-}
-
-
-/*
- * Container
- *
- * Center the page content.
- */
-
-.container {
-  max-width: 38rem;
-  padding-left:  1rem;
-  padding-right: 1rem;
-  margin-left:  auto;
-  margin-right: auto;
-}
-
-
-/*
- * Masthead
- *
- * Super small header above the content for site name and short description.
- */
-
-.masthead {
-  padding-top:    1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-}
-.masthead-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #505050;
-}
-.masthead-title a {
-  color: #505050;
-}
-.masthead-title small {
-  font-size: 75%;
-  font-weight: 400;
-  color: #c0c0c0;
-  letter-spacing: 0;
-}
-
-
-/*
- * Posts and pages
- *
- * Each post is wrapped in `.post` and is used on default and post layouts. Each
- * page is wrapped in `.page` and is only used on the page layout.
- */
-
-.page,
-.post {
-  margin-bottom: 4em;
-}
-
-/* Blog post or page title */
-.page-title,
-.post-title,
-.post-title a {
-  color: #303030;
-}
-.page-title,
-.post-title {
-  margin-top: 0;
-}
-
-/* Meta data line below post title */
-.post-date {
-  display: block;
-  margin-top: -.5rem;
-  margin-bottom: 1rem;
-  color: #FFE8C5;
-}
-
-/* Related posts */
-.related {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid #eee;
-}
-.related-posts {
-  padding-left: 0;
-  list-style: none;
-}
-.related-posts h3 {
-  margin-top: 0;
-}
-.related-posts li small {
-  font-size: 75%;
-  color: #999;
-}
-.related-posts li a:hover {
-  color: #268bd2;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
-}
-.related-posts li a:hover small {
-  color: inherit;
+  z-index: 10;
 }
 
-
-/* Footnotes */
-.footnote-definition:first-of-type {
-  border-top: 1px solid;
-  padding-top: 1rem;
-}
-.footnote-definition {
-  margin-top: 1rem;
-}
-.footnote-definition sup {
-  margin-left: -1rem;
-  float: left;
+.back-btn:hover {
+  color: rgba(0, 0, 0, 0.9);
 }
 
-
-/*
- * Pagination
- *
- * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
- * there are no more previous or next posts to show.
- */
-
-.pagination {
-  overflow: hidden; /* clearfix */
-  margin-left: -1rem;
-  margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  color: #ccc;
-  text-align: center;
+.post-article {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-/* Pagination items can be `span`s or `a`s */
-.pagination-item {
+.post-article-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0 0 20px;
+}
+
+.post-header-img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 24px;
   display: block;
+}
+
+/* Article body */
+.post-article p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 0 1em;
+}
+
+.post-article h2 {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 2em 0 0.5em;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.post-article h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 1.5em 0 0.4em;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.post-article img {
+  width: 100%;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.post-article a {
+  text-decoration: underline;
+}
+
+.post-article ul,
+.post-article ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.post-article li {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 0.2em;
+}
+
+.post-article code {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: 85%;
+  background: #f0f0f0;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+.post-article pre {
+  background: #f0f0f0;
+  border-radius: 6px;
   padding: 1rem;
-  border: 1px solid #eee;
-}
-.pagination-item:first-child {
-  margin-bottom: -1px;
+  overflow-x: auto;
+  margin-bottom: 1em;
 }
 
-/* Only provide a hover state for linked pagination items */
-a.pagination-item:hover {
-  background-color: #f5f5f5;
+.post-article pre code {
+  background: none;
+  padding: 0;
 }
 
-@media (min-width: 30em) {
-  .pagination {
-    margin: 3rem 0;
+/* Embeds & media used in markdown content */
+.pico8player {
+  width: 100%;
+  aspect-ratio: 640 / 512;
+  margin: 1.5rem 0;
+  border: none;
+  display: block;
+}
+
+.videoplayercontainer {
+  padding: 62.5% 0 0;
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.videoplayercontainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.youtubevideoplayer {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem 0;
+  border: none;
+  display: block;
+}
+
+.imagewithinpost {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.smallimagewithinpost {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+
+/* ─────────────────────────────────────────
+   Responsive
+───────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .home-page {
+    padding: 40px 16px 48px;
   }
-  .pagination-item {
-    float: left;
-    width: 50%;
+
+  .home-inner {
+    gap: 40px;
   }
-  .pagination-item:first-child {
-    margin-bottom: 0;
-    border-top-left-radius:    4px;
-    border-bottom-left-radius: 4px;
+
+  .home-name {
+    font-size: 36px;
   }
-  .pagination-item:last-child {
-    margin-left: -1px;
-    border-top-right-radius:    4px;
-    border-bottom-right-radius: 4px;
+
+  .home-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-page {
+    padding: 56px 16px 48px;
+  }
+
+  .post-article {
+    max-width: 100%;
+  }
+
+  .post-article-title {
+    font-size: 26px;
   }
 }
