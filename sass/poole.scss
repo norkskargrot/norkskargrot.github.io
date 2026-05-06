@@ -304,8 +304,9 @@ img {
 .post-article .smallimagewithinpost {
   display: block;
   margin: 1.5rem auto;
-  max-width: 400px;
-  width: 100%;
+  height: 400px;
+  width: auto;
+  max-width: 100%;
   border-radius: 4px;
 }
 
