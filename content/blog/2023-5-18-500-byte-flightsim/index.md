@@ -130,7 +130,7 @@ end
 pal() -- Reset the draw palette
 ```
 
-Initially I looped through this twice, once to draw the clouds and a second time to draw the ground, but as I played around with the movement, I realised something interesting. If you kept drawing past the horizon line, the view would "flip", as p became negative. This would flip the drawing of the lines, effectively creating a second plane of clouds below the first. The issue was, as the player's z coordinate changed both planes would appear to approach or recede together, braking the illusion of moving between two planes. This can be seen in this gif:
+Initially I looped through this twice, once to draw the clouds and a second time to draw the ground, but as I played around with the movement, I realised something interesting. If you kept drawing past the horizon line, the view would "flip", as p became negative. This would flip the drawing of the lines, effectively creating a second plane of clouds below the first. The issue was, as the player's z coordinate changed both planes would appear to approach or recede together, breaking the illusion of moving between two planes. This can be seen in this gif:
 
 <img class = smallimagewithinpost src="/blog/2023-5-18-500-byte-flightsim/doubleclouds.gif"> 
 
