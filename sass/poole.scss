@@ -110,11 +110,12 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   overflow: hidden;
-  transition: box-shadow 0.15s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .post-card:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
 }
 
 .post-card-image {

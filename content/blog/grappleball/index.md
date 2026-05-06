@@ -1,7 +1,7 @@
 +++
 title = "Grappleball"
 date = 2023-03-11
-description = "This project was an exploration of a physics-based movement system and a continuation of my interest in procedural animation."
+description = "Novel physics-based movement and experiments in procedural animation."
 template = "page.html"
 [extra]
 headerimage = "/blog/grappleball/grappleball.png"

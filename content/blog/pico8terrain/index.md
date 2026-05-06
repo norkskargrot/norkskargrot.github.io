@@ -1,7 +1,7 @@
 +++
 title = "Pico8 Terrain Renderer"
 date = 2023-03-11
-description = "Built in the Pico8 engine, this project was an experiment in 3d terrain rendering from scratch."
+description = "3D terrain rendering from scratch, built within tight performance constraints."
 template = "page.html"
 [extra]
 headerimage = "/blog/pico8terrain/walker.png"

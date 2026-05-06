@@ -1,7 +1,7 @@
 +++
 title = "Mini Mage"
 date = 2023-03-11
-description = "This project was a prototype for a unique spellcrafting system, where a player is given immense control over the magic available to them."
+description = "Spellcrafting and terrain manipulation in an isometric world."
 template = "page.html"
 [extra]
 headerimage = "/blog/minimage/minimage.png"

@@ -1,7 +1,7 @@
 +++
 title = "Tiny Sumo"
 date = 2023-03-14
-description = "Inspired by various board game design challenges online where participants created games with minimal rules or minimal components, I created this game to fit on a single playing card, to act as a business card of sorts for myself."
+description = "A minimal rules, minimal components board game that fits on a single card."
 template = "page.html"
 [extra]
 headerimage = "/blog/tinysumo/Header.png"
