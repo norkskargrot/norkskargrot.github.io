@@ -1,10 +1,10 @@
 +++
 title = "Mini Mage"
-weight = 3
+date = 2023-03-11
 description = "This project was a prototype for a unique spellcrafting system, where a player is given immense control over the magic available to them."
 template = "page.html"
 [extra]
-headerimage = "/games/minimage/minimage.png"
+headerimage = "/blog/minimage/minimage.png"
 tags = ["Pico8", "Playable Demo", "WIP"]
 +++
 This project was a prototype for a unique spellcrafting system, where a player is given immense control over the magic available to them.
@@ -17,7 +17,7 @@ Controls;
 - Press each of the two action buttons ("Z" and "X" on pc, or the onscreen "O" and "X" buttons on mobile) to use your two equipped spells.
 - Press the two action buttons simultaneously to open the spellcrafting menu and change your equipped spells. More details on how spellcrafting works below.
 
-<iframe class= "pico8player" src="/games/minimage/minimage.html"... ></iframe>
+<iframe class= "pico8player" src="/blog/minimage/minimage.html"... ></iframe>
 
 I have always been interested in unique magic systems in video games, particularly those which give the player a lot of customisation over the spells which are available to them. This is my ongoing attempt to create my own system. The basic concept is that when creating a spell, players choose two basic parameters; the type and the shape.
 

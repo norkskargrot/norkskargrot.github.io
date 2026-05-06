@@ -1,10 +1,10 @@
 +++
 title = "Tiny Sumo"
-weight = 1
+date = 2023-03-14
 description = "Inspired by various board game design challenges online where participants created games with minimal rules or minimal components, I created this game to fit on a single playing card, to act as a business card of sorts for myself."
 template = "page.html"
 [extra]
-headerimage = "/games/tinysumo/Header.png"
+headerimage = "/blog/tinysumo/Header.png"
 tags = ["Board Game", "Completed"]
 +++
 
@@ -18,11 +18,11 @@ Inspired by various board game design challenges online where participants creat
 ## The Final Product
 The two sides of the game board, one showing the board which the game is played on and the other the rules:
 
-<img class = imagewithinpost src="/games/tinysumo/bothsides.png">
+<img class = imagewithinpost src="/blog/tinysumo/bothsides.png">
 
 
 ## Demo of play
-I have also created a small demo of play, just containing a walkthrough of a single round of the game. While the game rules are entirely contained on the back of the card, this is a convenient reference if players are still confused. This demo can be found [here](/games/tinysumo/rules).
+I have also created a small demo of play, just containing a walkthrough of a single round of the game. While the game rules are entirely contained on the back of the card, this is a convenient reference if players are still confused. This demo can be found [here](/blog/tinysumo/rules).
 
 ## The Gameplay
 I would recommend playing the game before reading this section if you can, but no pressure.

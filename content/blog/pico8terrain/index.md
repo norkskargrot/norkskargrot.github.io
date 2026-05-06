@@ -1,17 +1,17 @@
 +++
 title = "Pico8 Terrain Renderer"
-weight = 2
+date = 2023-03-11
 description = "Built in the Pico8 engine, this project was an experiment in 3d terrain rendering from scratch."
 template = "page.html"
 [extra]
-headerimage = "/games/pico8terrain/walker.png"
+headerimage = "/blog/pico8terrain/walker.png"
 tags = ["Pico8", "Playable Demo", "WIP"]
 +++
 Built in the Pico8 engine, this project was an experiment in 3d terrain rendering from scratch.
 
 ## Playable Demo:
 Use the mouse to rotate the view, and the arrow keys to move.
-<iframe class= "pico8player" src="/games/pico8terrain/walker.html"... ></iframe>
+<iframe class= "pico8player" src="/blog/pico8terrain/walker.html"... ></iframe>
 
 After reading about the voxel-space terrain rendering in the game Comanche: Maximum overkill (1992), I was keen to create my own implementation in Pico8. This projects was the result, and continues to be expanded far beyond the original implementation.
 
@@ -23,12 +23,12 @@ Another issue which pico8 posed is that of data storage, where projects are gene
 
 As the noise map is fairly low resolution, Bilinear sampling has to be smoothed in order to create smooth terrain. An older version of the project without the smoother sampling can be seen here;
 
-<img class = imagewithinpost src="/games/pico8terrain/oldterrain.gif">
+<img class = imagewithinpost src="/blog/pico8terrain/oldterrain.gif">
 
 The final look of the demo is largely controlled by the visual limitations of pico8, namely that the screen is constrained to a resolution of 128*128 pixels, and only 16 colours. This meant that dithering is used heavily to convey lighting in the terrain, gradients in the sunset, and more. It is a entertaining challenge to create an appealing visual style within these constraints.
 
 Various versions of this project have been created, including features on the terrain like trees, rocks, and characters, or a runtime-generated world map to assist navigation, both visible in the gif below. These features were removed in a from-scratch rewrite of the terrain rendering, aiming to improve performance and visuals, but will return in a future version. I would also love to including a raycasting engine to draw the solid walls of buildings.
 
-<img class = imagewithinpost src="/games/pico8terrain/objectsonterrain.gif">
+<img class = imagewithinpost src="/blog/pico8terrain/objectsonterrain.gif">
 
 I am keen to progress this demo in the future, and to see what features I can continue to squeeze into such tight constraints.
