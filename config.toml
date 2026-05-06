@@ -17,4 +17,4 @@ hyde_links = [
 
 [markdown.highlighting]
 highlight_code = true
-theme = "nord"
+theme = "solarized-light"

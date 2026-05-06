@@ -175,7 +175,7 @@ img {
 }
 
 .post-article {
-  max-width: 500px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
@@ -249,8 +249,9 @@ img {
 }
 
 .post-article pre {
-  background: #f0f0f0;
-  border-radius: 6px;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
   padding: 1rem;
   overflow-x: auto;
   margin-bottom: 1em;
