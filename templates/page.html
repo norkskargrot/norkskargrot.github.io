@@ -18,5 +18,27 @@
     {% if page.description %}<p class="post-article-subtitle">{{ page.description }}</p>{% endif %}
     {{ page.content | safe }}
   </article>
+  <nav class="project-footer-nav">
+    <hr class="project-footer-rule">
+    <div class="project-footer-links">
+      {% if page.ancestors %}
+        {% set parent_path = page.ancestors | last %}
+        {% set parent = get_section(path=parent_path) %}
+        <a href="{{ parent.permalink }}" class="project-footer-home">Home</a>
+      {% else %}
+        <a href="{{ config.base_url }}" class="project-footer-home">Home</a>
+      {% endif %}
+      {% if page.higher %}
+        <a href="{{ page.higher.permalink }}" class="project-footer-next">Next project &rsaquo;</a>
+      {% else %}
+        {% if page.ancestors %}
+          {% set parent_path = page.ancestors | last %}
+          {% set parent = get_section(path=parent_path) %}
+          {% set first_page = parent.pages | first %}
+          <a href="{{ first_page.permalink }}" class="project-footer-next">Next project &rsaquo;</a>
+        {% endif %}
+      {% endif %}
+    </div>
+  </nav>
 </div>
 {% endblock content %}

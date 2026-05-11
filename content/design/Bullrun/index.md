@@ -5,7 +5,7 @@ weight = 4
 description = "A fantasy football inspired crypto game"
 template = "page.html"
 [extra]
-headerimage = "/blog/2023-3-30-picocad-hell/bridge.png"
+headerimage = "/blog/picocad-hell/bridge.png"
 tags = ["Pico8", "PicoCAD", "Modelling"]
 +++
 

@@ -4,7 +4,7 @@ date = 2023-05-18
 description = "A flight simulator in 500 bytes of code, created for the tweet tweet jam"
 template = "page.html"
 [extra]
-headerimage = "/blog/2023-5-18-500-byte-flightsim/plane.png"
+headerimage = "/blog/500-byte-flightsim/plane.png"
 tags = ["Pico8", "Playable Demo"]
 +++
 ## Playable Demo
@@ -13,7 +13,7 @@ tags = ["Pico8", "Playable Demo"]
 - Pitch up and down using the up/down arrows.
 - The plane has momentum, when you pitch down you will gain speed quickly, when you pitch up you'll slow again.
 
-<iframe class= "pico8player" src="/blog/2023-5-18-500-byte-flightsim/plane.html"... ></iframe>
+<iframe class= "pico8player" src="/blog/500-byte-flightsim/plane.html"... ></iframe>
 
 ## The 500 bytes
 
@@ -75,7 +75,7 @@ poke2(0x5F38,0x1010) -- Set the tiling used by tline, so that the map repeats ev
 
 This creates this lovely generated image which the rest of the graphics rely on. This texture doesn't tile, but fixing that took up far too many bytes of code for me to worry about it. The colours we will pallette-swap into something more sensible later.
 
-<img class = smallimagewithinpost src="/blog/2023-5-18-500-byte-flightsim/noise.png">
+<img class = smallimagewithinpost src="/blog/500-byte-flightsim/noise.png">
 
 Some changes were made to this initial generation code to squeeze down it's size from what we see above, including:
 
@@ -132,15 +132,15 @@ pal() -- Reset the draw palette
 
 Initially I looped through this twice, once to draw the clouds and a second time to draw the ground, but as I played around with the movement, I realised something interesting. If you kept drawing past the horizon line, the view would "flip", as p became negative. This would flip the drawing of the lines, effectively creating a second plane of clouds below the first. The issue was, as the player's z coordinate changed both planes would appear to approach or recede together, breaking the illusion of moving between two planes. This can be seen in this gif:
 
-<img class = smallimagewithinpost src="/blog/2023-5-18-500-byte-flightsim/doubleclouds.gif"> 
+<img class = smallimagewithinpost src="/blog/500-byte-flightsim/doubleclouds.gif"> 
 
 By subtracting a value from the player's z coordinate at the drawing point of the horizon line, it was possible to have the planes appear to recede or approach together. Combined with a pallette swap at the horizon line, both the clouds and land can be drawn very simply and with a very low character count:
 
-<img class = smallimagewithinpost src="/blog/2023-5-18-500-byte-flightsim/cloudsandland.gif"> 
+<img class = smallimagewithinpost src="/blog/500-byte-flightsim/cloudsandland.gif"> 
 
 The illusion still breaks entirely if the player leaves the vertical boundaries of the world, seen in the gif below, but in the final game this was avoided by first making sure the player never has enough momentum to fly above the cloudline, and second by causing them to crash and restart if they would go below the ground plane.
 
-<img class = smallimagewithinpost src="/blog/2023-5-18-500-byte-flightsim/breakingverticalbounries.gif"> 
+<img class = smallimagewithinpost src="/blog/500-byte-flightsim/breakingverticalbounries.gif"> 
 
 From here a lot of the above drawing logic can be squeezed down and simplified with just algebra which, combined with some of the code-shrinking techniques described above, results in the following code for drawing the environment:
 
@@ -234,7 +234,7 @@ print("¥",xd-1-g*500,yd+j*5,8)
 
 Which resulted in quite a nice looking plane effect:
 
-<img class = smallimagewithinpost src="/blog/2023-5-18-500-byte-flightsim/planeinitial.gif"> 
+<img class = smallimagewithinpost src="/blog/500-byte-flightsim/planeinitial.gif"> 
 
 Quite a lot of changes were required, however, to get this to fit into a smaller size, including:
 
@@ -264,6 +264,6 @@ if(z>w)run()
 
 Previously I also included a reset if the player was flying backwards (v<0), representing a restart due to stalling, but it consumed a few valuable characters.
 
-<img class = smallimagewithinpost src="/blog/2023-5-18-500-byte-flightsim/plane.gif">
+<img class = smallimagewithinpost src="/blog/500-byte-flightsim/plane.gif">
 
 If you got here, thanks for reading! All in all this jam was a fantastic opportunity to explore tiny sized code where every character counts, and I would highly recommend trying out a similar jam if you haven't!

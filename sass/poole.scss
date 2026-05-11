@@ -407,3 +407,37 @@ img {
   }
 
 }
+
+/* ─────────────────────────────────────────
+   Project footer nav
+───────────────────────────────────────── */
+
+.project-footer-nav {
+  max-width: 680px;
+  margin: 64px auto 0;
+}
+
+.project-footer-rule {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0 0 20px;
+}
+
+.project-footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-footer-home,
+.project-footer-next {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
+.project-footer-home:hover,
+.project-footer-next:hover {
+  color: rgba(0, 0, 0, 1);
+}
