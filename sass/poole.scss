@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/LatoLatin-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/LatoLatin-SemiboldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,7 +28,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   background: #FAFAFA;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 a {
@@ -62,10 +78,10 @@ img {
 }
 
 .home-name {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 48px;
   line-height: 1.2;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.8);
   margin: 0;
 }
 
@@ -131,10 +147,10 @@ img {
 }
 
 .post-card-title {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .post-card-desc {
@@ -166,7 +182,7 @@ img {
 }
 
 .back-btn:hover {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .post-article {
@@ -175,15 +191,15 @@ img {
 }
 
 .post-article-title {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 48px;
   line-height: 1.2;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.8);
   margin: 0 0 8px;
 }
 
 .post-article .post-article-subtitle {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 24px;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.7);
@@ -200,24 +216,24 @@ img {
 /* Article body */
 .post-article p {
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1.6;
   color: rgba(0, 0, 0, 0.7);
-  margin: 0 0 1em;
+  margin: 0 0 1.5em;
 }
 
 .post-article h2 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 32px;
   line-height: 1.2;
-  margin: 2em 0 0.4em;
-  color: rgba(0, 0, 0, 0.9);
+  margin: 1.5em 0 0.4em;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .post-article h3 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 24px;
   line-height: 1.2;
-  margin: 1.5em 0 0.4em;
+  margin: 0.6em 0 0.4em;
   color: rgba(0, 0, 0, 0.7);
 }
 
