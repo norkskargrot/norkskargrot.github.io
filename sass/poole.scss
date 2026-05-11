@@ -62,7 +62,7 @@ img {
 }
 
 .home-name {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 48px;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.9);
@@ -77,16 +77,11 @@ img {
   flex-shrink: 0;
 }
 
-.home-bio {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.7);
-}
-
+.home-bio,
 .home-contact {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.5;
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -180,15 +175,15 @@ img {
 }
 
 .post-article-title {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 48px;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.9);
   margin: 0 0 8px;
 }
 
-.post-article-subtitle {
-  font-weight: 600;
+.post-article .post-article-subtitle {
+  font-weight: 500;
   font-size: 24px;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.7);
@@ -211,7 +206,7 @@ img {
 }
 
 .post-article h2 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 32px;
   line-height: 1.2;
   margin: 2em 0 0.4em;
@@ -219,7 +214,7 @@ img {
 }
 
 .post-article h3 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 24px;
   line-height: 1.2;
   margin: 1.5em 0 0.4em;
@@ -319,12 +314,37 @@ img {
 }
 
 .post-article .xlimagewithinpost {
+  --xl-w: min(960px, calc(100vw - 48px));
   display: block;
-  width: 960px;
-  max-width: calc(100vw - 48px);
-  margin: 2rem -140px;
+  width: var(--xl-w);
+  max-width: none;
+  margin: 2rem calc((100% - var(--xl-w)) / 2);
   border-radius: 24px;
   border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+/* ─────────────────────────────────────────
+   Sidebar
+───────────────────────────────────────── */
+
+.show-in-mobile { display: none; }
+.show-in-desktop { display: block; }
+
+.sidebarsmall-inner {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.sidebarsmall-menu-icon {
+  width: 40px;
+}
+
+.siteTitle-arrow {
+  width: 0;
+  min-width: 100%;
 }
 
 
@@ -333,6 +353,9 @@ img {
 ───────────────────────────────────────── */
 
 @media (max-width: 600px) {
+  .show-in-mobile { display: block; }
+  .show-in-desktop { display: none; }
+
   .home-page {
     padding: 40px 16px 48px;
   }
@@ -367,9 +390,4 @@ img {
     font-size: 32px;
   }
 
-  .post-article .xlimagewithinpost {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
 }

@@ -29,12 +29,12 @@
 
 {% macro smallSidebar() %}
 <div class="sidebarsmall">
-    <div style="display: flex; flex-direction: row; gap: 2rem; align-items: flex-start;">
+    <div class="sidebarsmall-inner">
         <a href="{{ config.base_url }}">
-            <img src="/images/menu.svg" style="width: 40px;">
+            <img class="sidebarsmall-menu-icon" src="/images/menu.svg">
             <div class="siteTitle">
                 <a href="{{ config.base_url }}">{{ config.title }}</a>
-                <img src="/images/arrow.svg" style="width: 0; min-width: 100%;">
+                <img class="siteTitle-arrow" src="/images/arrow.svg">
             </div>
         </a>
     </div>

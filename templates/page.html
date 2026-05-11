@@ -6,7 +6,13 @@
 
 {% block content %}
 <div class="post-page">
-  <a class="back-btn" href="{{ config.base_url }}">&lsaquo;</a>
+  {% if page.ancestors %}
+    {% set parent_path = page.ancestors | last %}
+    {% set parent = get_section(path=parent_path) %}
+    <a class="back-btn" href="{{ parent.permalink }}">&lsaquo;</a>
+  {% else %}
+    <a class="back-btn" href="{{ config.base_url }}">&lsaquo;</a>
+  {% endif %}
   <article class="post-article">
     <h1 class="post-article-title">{{ page.title }}</h1>
     {% if page.description %}<p class="post-article-subtitle">{{ page.description }}</p>{% endif %}
