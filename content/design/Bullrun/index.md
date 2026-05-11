@@ -1,29 +1,24 @@
 +++
 title = "Bullrun"
 date = 2026-05-11
-weight = 4
+weight = 2
 description = "A fantasy football inspired crypto game"
 template = "page.html"
 [extra]
-headerimage = "/blog/picocad-hell/bridge.png"
+headerimage = "/design/Bullrun/og-image.png"
 tags = ["Pico8", "PicoCAD", "Modelling"]
 +++
 
 ## Overview
 During a period when the crypto zeitgeist was focused on on-chain gaming, we designed and built a fantasy football style crypto game to draw viral social media attention to the Infinex platform, as well as to encourage returning daily activity during an otherwise quiet period in the crypto market. 
 
-<img class = imagewithinpost src="/design/Craterun/main-ui.png">
+{{ video(src="bullrun-ui-recording.mp4") }}
 
-# Process  
-## Starting 
+## Process  
+### A game engine, built on web technology
+The process of creating Bullrun involved significant challenges relating to the experience of the 
 
-
-## From mechanics to a game  
-
-
-<img class = imagewithinpost src="/design/Craterun/brand-moodboard.png">
-<img class = imagewithinpost src="/design/Craterun/prizes.png">
-<img class = imagewithinpost src="/design/Craterun/flows.png">
+### From mechanics to a game  
 
 # Outcome
-When the campaign released to our users and the wider crypto audience, it was a fast success. Word spread across online communities and we saw an influx of users who were excited to try it out. The mechanic design kept many users coming back each day to claim and re-stake their rewards, and once users were active daily, we saw a large increases in activity across the rest of the app's features as well.
+The release of bullrun was a success, bringing the Infinex app to the forefront of user's minds during a quiet period in the crypto market. At it's peak, the game reached 15,000 daily active players, representing the largest spike in the Infinex's user and activity growth that had been seen thus far in the project's lifetime. The game continued to be updated for several months after it's release with new additions to the mechanics, keeping it a fresh play experience.
