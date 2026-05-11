@@ -1,7 +1,7 @@
 +++
 title = "Craterun"
 date = 2026-05-11
-weight = 4
+weight = 1
 description = "A gamified attention campaign for Infinex"
 template = "page.html"
 [extra]

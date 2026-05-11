@@ -4,15 +4,6 @@ title = "Nic Docker"
 description = "Building skills so I can build things. Design, dev, board games, video games, other stuff too. Welcome to my little corner of the internet, it's nice to have you here."
 generate_feeds = true
 
-[extra]
-hyde_sticky = true
-hyde_reverse = false
-hyde_theme = ""
-hyde_links = [
-    {url = "/design/", name = "DESIGN"},
-    {url = "/blog/", name = "POSTS"},
-]
-
 [markdown]
 
 [markdown.highlighting]
