@@ -1,0 +1,29 @@
++++
+title = "Bullrun"
+date = 2026-05-11
+weight = 4
+description = "A fantasy football inspired crypto game"
+template = "page.html"
+[extra]
+headerimage = "/blog/2023-3-30-picocad-hell/bridge.png"
+tags = ["Pico8", "PicoCAD", "Modelling"]
++++
+
+## Overview
+Building a fantasy football style crypto trading game to draw viral social media attention to the Infinex platform, as well as to encourage returning daily activity during an otherwise quiet period in the crypto market. 
+
+<img class = imagewithinpost src="/design/Craterun/main-ui.png">
+
+# Process  
+## Starting with mechanics  
+Over two months we turned Craterun from the scratchings of an idea into a rich interactive experience. I began by hashing out the structure of the incentives with the team in whiteboarding sessions. This was essential, as no matter how nice the experience of engaging with the campaign was, it could all collapse on the numbers not 'feeing right' for users. I looked carefully at what had worked in other successful incentive schemes not just from crypto, but from wider fintech and other industries. From there, I created low-fidelity demos for testing just the campaign structure itself.  
+  
+## From mechanics to a game  
+Once the team was confident the mechanics felt strong, I dived into IA, brand and UI. I chose to lean heavily into stylised 3D rendering, which was a lot of work in asset creation, but ended up being key in the campaign standing out among many other crypto campaigns. The success of this can be seen in the community reception, where visual elements from the campaign became memes that were referenced regularly long after the campaign was over.
+
+<img class = imagewithinpost src="/design/Craterun/brand-moodboard.png">
+<img class = imagewithinpost src="/design/Craterun/prizes.png">
+<img class = imagewithinpost src="/design/Craterun/flows.png">
+
+# Outcome
+When the campaign released to our users and the wider crypto audience, it was a fast success. Word spread across online communities and we saw an influx of users who were excited to try it out. The mechanic design kept many users coming back each day to claim and re-stake their rewards, and once users were active daily, we saw a large increases in activity across the rest of the app's features as well.
