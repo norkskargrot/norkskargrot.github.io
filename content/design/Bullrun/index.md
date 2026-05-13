@@ -6,7 +6,9 @@ description = "A fantasy football inspired trading card game"
 template = "page.html"
 [extra]
 headerimage = "/design/Bullrun/og-image.png"
-tags = []
+company = "Infinex"
+year = "2025"
+scope = ["Game design", "UI / UX / IA", "Brand", "Prototyping", "Interaction design"]
 +++
 
 ## Overview

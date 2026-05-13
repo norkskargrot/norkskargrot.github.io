@@ -5,7 +5,9 @@ description = "Creating an online dapp and marketing site for a brand new defi l
 template = "page.html"
 [extra]
 headerimage = "/design/tomcat/tomcat.png"
-tags = ["Wireframing", "Branding", "Interactive Prototyping"]
+company = "Tomcat"
+year = "2023"
+scope = ["Brand", "Wireframing", "Interactive Prototyping"]
 +++
 
 <img class = imagewithinpost src="/design/tomcat/tomcat.png">

@@ -5,7 +5,10 @@ weight = 1
 description = "A gamified attention campaign for Infinex"
 template = "page.html"
 [extra]
-headerimage = "/design/Craterun/main-ui.png"
+headerimage = "/design/Craterun/og-image.png"
+company = "Infinex"
+year = "2024"
+scope = ["Campaign design", "Product design", "3d Modelling & Animation"]
 +++
 
 ## Overview

@@ -5,7 +5,9 @@ description = "A short two-week sprint, creating initial user flows and a light 
 template = "page.html"
 [extra]
 headerimage = "/design/positev/positev.png"
-tags = ["Branding", "User flows", "Wireframing"]
+company = "Positev"
+year = "2022"
+scope = ["UI / UX / IA", "Brand", "Wireframing"]
 +++
 
 <img class = imagewithinpost src="/design/positev/examplescreens.png">

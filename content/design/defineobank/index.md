@@ -4,8 +4,10 @@ weight = 2
 description = "Creating a mobile-first banking app for a neobank startup, focusing on building an easy entry point for users unfamiliar with decentralised finance to take advantage of high-return stablecoin staking."
 template = "page.html"
 [extra]
-headerimage = "/design/defineobank/neobank.png"
-tags = ["User Testing", "Wireframing", "Branding", "Copywriting"]
+headerimage = "/design/defineobank/og-image.png"
+company = "Neobank"
+year = "2023"
+scope = ["UI / UX / IA", "Brand", "Prototyping"]
 +++
 
 <img class = imagewithinpost src="/design/defineobank/hifi.png">
