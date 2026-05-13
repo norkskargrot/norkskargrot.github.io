@@ -16,11 +16,11 @@ Infinex had a great product, but was struggling to get attention from the broade
 
 ## Process
 ### Starting with mechanics
+Over two months we turned Craterun from a rough idea into a rich interactive experience. I began by hashing out the structure of the incentives with the team in whiteboarding sessions. This was essential, as no matter how nice the experience of engaging with the campaign was, it could all collapse on the numbers not 'feeing right' for users. 
 
-Over two months we turned Craterun from the scratchings of an idea into a rich interactive experience. I began by hashing out the structure of the incentives with the team in whiteboarding sessions. This was essential, as no matter how nice the experience of engaging with the campaign was, it could all collapse on the numbers not 'feeing right' for users. I looked carefully at what had worked in other successful incentive schemes not just from crypto, but from wider fintech and other industries. From there, I created low-fidelity demos for testing just the campaign structure itself.
+I looked carefully at what had worked in other successful incentive schemes not just from crypto, but from wider fintech and other industries. From there, I created low-fidelity demos for testing just the campaign structure itself within an internal team test.
 
 ### From mechanics to a game
-
 Once the team was confident the mechanics felt strong, I dived into IA, brand and UI. I chose to lean heavily into stylised 3D rendering, which was a lot of work in asset creation, but ended up being key in the campaign standing out among many other crypto campaigns. The success of this can be seen in the community reception, where visual elements from the campaign became memes that were referenced regularly long after the campaign was over.
 
 <img class="xlimagewithinpost" src="/design/Craterun/brand-moodboard.png" alt="Brand moodboard">
