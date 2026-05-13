@@ -2,7 +2,7 @@
 title = "Craterun"
 date = 2026-05-11
 weight = 1
-description = "A gamified attention campaign for Infinex"
+description = "A gamified attention campaign, designed to draw new users and daily activity to the Infinex platform."
 template = "page.html"
 [extra]
 headerimage = "/design/Craterun/og-image.png"

@@ -2,7 +2,7 @@
 title = "Bullrun"
 date = 2026-05-11
 weight = 2
-description = "A fantasy football inspired trading card game"
+description = "A fantasy football inspired card game designed to emulate crypto trading with real-world market data in an accessible and low-risk way."
 template = "page.html"
 [extra]
 headerimage = "/design/Bullrun/og-image.png"
