@@ -7,11 +7,11 @@
 
     <header class="home-header">
       <div class="home-header-top">
-        <h1 class="home-name type-display">{{ config.title }}</h1>
+        <h1>{{ config.title }}</h1>
         <img class="home-avatar" src="/images/profilePicture.png" alt="{{ config.title }}">
       </div>
-      <p class="home-bio type-body">{{ config.description }}</p>
-      <p class="home-contact type-body">
+      <p>{{ config.description }}</p>
+      <p class="home-contact">
         Contact me <a href="https://twitter.com/D_Nocker">@D_Nocker</a>, or by
         <a href="mailto:nick@dockerz.net">&#9993; email</a>.
       </p>
@@ -22,8 +22,8 @@
       <a class="post-card" href="{{ page.permalink }}">
         <img class="post-card-image" src="{{ page.extra.headerimage }}" alt="{{ page.title }}">
         <div class="post-card-info">
-          <div class="post-card-title type-title">{{ page.title }}</div>
-          <div class="post-card-desc type-caption">{{ page.description }}</div>
+          <div class="type-title">{{ page.title }}</div>
+          <div class="type-caption">{{ page.description }}</div>
         </div>
       </a>
       {% endfor %}
