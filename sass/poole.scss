@@ -488,6 +488,10 @@ img {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  .project-image-card {
+    order: -1;
+  }
 }
 
 @media (max-width: 600px) {
