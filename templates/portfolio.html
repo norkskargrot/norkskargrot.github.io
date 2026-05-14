@@ -10,8 +10,8 @@
       <a class="post-card" href="{{ page.permalink }}">
         <img class="post-card-image" src="{{ page.extra.headerimage }}" alt="{{ page.title }}">
         <div class="post-card-info">
-          <div class="type-title">{{ page.title }}</div>
-          <div class="type-caption">{{ page.description }}</div>
+          <h3>{{ page.title }}</h3>
+          <small>{{ page.description }}</small>
         </div>
       </a>
       {% endfor %}

@@ -10,32 +10,32 @@
       <img class="design-avatar" src="{{ section.extra.avatar }}" alt="{{ section.extra.name }}">
       <h2>{{ section.extra.name }}</h2>
       <p>{{ section.extra.role }}</p>
-      <p class="type-caption">{{ section.extra.bio }}</p>
-      <p class="design-contact type-caption">{{ section.extra.contact_text }} <a href="mailto:{{ section.extra.contact_email }}">email</a>.</p>
+      <small>{{ section.extra.bio }}</small>
+      <small class="design-contact">{{ section.extra.contact_text }} <a href="mailto:{{ section.extra.contact_email }}">email</a>.</small>
     </header>
 
     <div class="design-projects">
       {% for page in section.pages %}
       <a class="project-row" href="{{ page.permalink }}">
         <div class="project-info">
-          <div class="type-title">{{ page.title }}</div>
-          <p class="type-caption">{{ page.description }}</p>
+          <h3>{{ page.title }}</h3>
+          <small>{{ page.description }}</small>
           <table class="project-meta">
             {% if page.extra.company %}
             <tr>
-              <td class="project-meta-label type-caption">Company</td>
+              <td class="project-meta-label">Company</td>
               <td class="type-caption">{{ page.extra.company }}</td>
             </tr>
             {% endif %}
             {% if page.extra.year %}
             <tr>
-              <td class="project-meta-label type-caption">Year</td>
+              <td class="project-meta-label">Year</td>
               <td class="type-caption">{{ page.extra.year }}</td>
             </tr>
             {% endif %}
             {% if page.extra.scope %}
             <tr>
-              <td class="project-meta-label type-caption">Scope</td>
+              <td class="project-meta-label">Scope</td>
               <td class="type-caption">
                 {% for item in page.extra.scope %}
                 <div>{{ item }}</div>
