@@ -1,36 +1,40 @@
 +++
-title = "Perps"
+title = "Perps trading"
 date = 2026-05-11
-weight = 1
-description = "Designing an interface for professional traders which aggregates decentralized exchanges and takes advantage of the UX improvements enabled by the Infinex platform."
+weight = 0
+description = "Designing a data-dense interface for professional traders to aggregate decentralized exchanges and take advantage of the UX improvements enabled by the Infinex platform."
 template = "page.html"
 [extra]
 headerimage = "/design/perps/og-image.png"
 company = "Infinex"
 year = "2025"
-scope = ["UI / UX", "Information architecture", "Dense data display"]
+scope = ["UI / UX", "Information architecture", "Data-dense design"]
 +++
 
 ## Overview
-During a period when the crypto zeitgeist was focused on on-chain gaming, we designed and built a fantasy football style crypto game to draw viral social media attention to the Infinex platform, as well as to encourage returning daily activity during an otherwise quiet period in the crypto market. 
+Perpetuals trading poses an array of complex UX problems and considerations. With extremely dense data displays, the requirement for quickly executable forms, and huge amounts of prior art and expectations from experienced users, making UX innovations in a trading interface is a tall order. Nonetheless we were confident that we would be able to bring meaningful improvement the experience of trading crypto futures on-chain.
 
-{{ video(src="bullrun-ui-recording.mp4") }}
+{{ video(src="perps-interface.mp4") }}
 
 ## Process  
 
-### The lowest fidelity prototypes
-In the initial ideating stages of Bullrun, we had an idea for how the mechanics could work, but needed to test whether they actually translated into a fun game. We testing the mechanics by building out the most basic form of the game in a spreadsheet and playing it internally within the team. This validated very early on that the core of the game was appealing, giving us confidence going into the more complete design and build process. 
+### An established UX paradigm
+When starting this project, we knew that crypto traders who use perps interfaces daily have strong preconceptions as to how they should work, especially in terms of layout and the feel of interactions. This meant that we had a strong baseline of patterns to start with, but it also means that any changes to these expectations have to be obviously valuable to be worth the cost of user learning. To ensure that we accomplished this, we sought feedback on the interface from traders frequently.
 
-### An evolution of the Infinex Brand
-The new bullrun sub-brand needed to feel both a part of the Infinex identity, but also more like a game than the functional screens and brand materials that composed the existing app. As part of this branding effort I took inspiration from sports games and trading cards, bringing together Infinex's modern, techy identity with the trading card theme of the game itself.
+### Designing for extreme UI density
+One key aspect of trading interfaces which traders have come to expect is that all the market information, position information, and trade execution forms should be visible all at once. This is essential as it lets users quickly cross-reference information from the market and their existing positions while executing a trade, but is a lot to display on a single screen. Tabbed, disclosed, or modal information was not an option save for a few niche cases. To accommodate for such dense UI we had to make significant extensions to our design system, allowing for smaller form elements, new data display patterns, and more. Providing users with maximum clarity in such a dense interface proved to be a fun and interesting design challenge. 
 
-### Designing for web constraints
-It was essential that the design, dev, and release cycle for the first version of Bullrun was fast (only a month and a half!) to capture the fleeting attention cycle that was focused on crypto gaming. To enable this we built the game on traditional web technology, leveraging infinex's existing tech stack, rather than in a game engine, which gave us less flexibility in both the functionality and visual effects. Despite this, we managed to create a game-like feel through a carefully considered information architecture, brand, and animation. 
+### The unique use-case of mobile
+When talking to experienced traders we discovered that the way they used trading interfaces on mobile differed significantly from desktop. Due to the reduced screen space available on mobile, it was challenging to conduct the deep analysis of market data required to make informed decisions about entering new positions. The always-available portability of mobile, however, made it perfect for monitoring the positions you'd already opened on desktop, adjusting or closing them as necessary. 
 
+When designing our mobile interface we focused on this use-case, optimising for monitoring and modifying already-open positions rather than spreading the limited available space over the entire trading experience.
 
-<img class="xlimagewithinpost" src="/design/bullrun/game-screens.png" alt="Game Screens">
-<img class="xlimagewithinpost" src="/design/bullrun/cards.png" alt="Card Designs">
-<img class="xlimagewithinpost" src="/design/bullrun/mobile-screens.png" alt="Mobile Screens">
+<img class="xlimagewithinpost" src="/design/perps/in-app.png" alt="User flows">
+<img class="xlimagewithinpost" src="/design/perps/perps-interface
+.png" alt="User flows">
+<img class="xlimagewithinpost" src="/design/perps/mobile.png" alt="User flows">
 
-# Outcome
-The release of bullrun was a success, bringing the Infinex app to the forefront of user's minds during a quiet period in the crypto market. At it's peak, the game reached 15,000 daily active players, representing the largest spike in the Infinex's user and activity growth that had been seen thus far in the project's lifetime. The game continued to be updated for several months after it's release with new additions to the mechanics, keeping it a fresh play experience.
+## Outcome
+On launch, the perps experience struggled to gain initial traction in crypto communities. This was likely due to a combination of factors, including a downturn in crypto market conditions and the release of Aster and Lighter, new perps engines which drew a lot of trading activity away from hyperliquid which we initially built on top of. 
+
+Despite initially slow growth, those who did try Infinex perps gave very positive feedback. Over the following few months we added support for other perps engines and continued to improve the interface itself, allowing the perps user base to grow over time and become Infinex's strongest revenue source.

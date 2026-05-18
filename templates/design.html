@@ -11,7 +11,7 @@
       <h2>{{ section.extra.name }}</h2>
       <p>{{ section.extra.role }}</p>
       <small>{{ section.extra.bio }}</small>
-      <small class="design-contact">{{ section.extra.contact_text }} <a href="mailto:{{ section.extra.contact_email }}">email</a>.</small>
+      <small class="design-contact">I'd love to hear from you, get in touch via <a href="mailto:{{ section.extra.contact_email }}">email</a>, or on <a href="https://www.linkedin.com/in/nicdocker">linkedin</a>.</small>
     </header>
 
     <div class="design-projects">
@@ -51,6 +51,18 @@
       </a>
       {% endfor %}
     </div>
+
+    <small class="design-outro">That's the end of my design case studies, but if you're interested I spend a lot of my free time working on games, both physical and digital. Take a look at some of them <a href="{{ config.base_url }}">here</a>.</p>
+
+    <nav class="project-footer-nav">
+      <hr class="project-footer-rule">
+      <div class="project-footer-links">
+        <div class="project-footer-icons">
+          <a href="https://www.linkedin.com/in/nicdocker" class="project-footer-icon"><img src="/linkedin.svg" alt="LinkedIn"></a>
+          <a href="mailto:nick@dockerz.net" class="project-footer-icon"><img src="/mail.svg" alt="Email"></a>
+        </div>
+      </div>
+    </nav>
 
   </div>
 </div>
