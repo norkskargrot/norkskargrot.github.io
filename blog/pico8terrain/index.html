@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Google Analytics tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFM54NSSW0"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BFM54NSSW0');
+      </script>
+
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Pico8 Terrain Renderer | Nic Docker</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+      <!-- Swup for fancy page transitions -->
+      <script src="https://nic.dockerz.net/swup.umd.js"></script>
+      <script>
+        const swup = new Swup();
+      </script>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://nic.dockerz.net/poole.css">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+      
+
+      
+      
+    </head>
+
+    <body>
+
+      <div id="swup">
+        
+<div class="post-page">
+  
+    
+    
+    <a class="back-btn" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;">&lsaquo;</a>
+  
+  <article class="post-article">
+    <h1>Pico8 Terrain Renderer</h1>
+    <p class="post-article-subtitle">3D terrain rendering from scratch, built within tight performance constraints.</p>
+    <p>Built in the Pico8 engine, this project was an experiment in 3d terrain rendering from scratch.</p>
+<h2 id="playable-demo">Playable Demo:</h2>
+<p>Use the mouse to rotate the view, and the arrow keys to move.</p>
+<iframe class= "pico8player" src="/blog/pico8terrain/walker.html"... ></iframe>
+<p>After reading about the voxel-space terrain rendering in the game Comanche: Maximum overkill (1992), I was keen to create my own implementation in Pico8. This projects was the result, and continues to be expanded far beyond the original implementation.</p>
+<p>A fantastic resource on how the Comanche terrain rendering works can be found <a href="https://github.com/s-macke/VoxelSpace">here</a>.</p>
+<p>Implementing this in Pico8 posed a significant challenge, as the engine's deliberate performance limitations made achieving a reasonable framerate an extreme optimisation puzzle. Pico8 has no gpu and does no allow for any form of parallelisation. It also limits the cpu operations which can be performed per frame. For any form of 3d-rendering this rapidly becomes a problem, meaning that 3d Pico8 applications are limited, and often rely on faux-3d techniques such as raycasting for walls or similar. Optimising this algorithm involved many tricks and pushing the limits of what is possible in Pico8.</p>
+<p>Another issue which pico8 posed is that of data storage, where projects are generally only allowed 2kb of data for code and assets. This meant that the terrain data has to be generated on startup, which can be seen by the user. The algorithm which I implemented to create this data is a simple process of assigning random values at a given interval, bilinearly sampling these to generate data in between, and then slowly blurring the result to smooth it. This process is done twice at different scales and then combined to provide variety in the size of the noise output.</p>
+<p>As the noise map is fairly low resolution, Bilinear sampling has to be smoothed in order to create smooth terrain. An older version of the project without the smoother sampling can be seen here;</p>
+<img class = imagewithinpost src="/blog/pico8terrain/oldterrain.gif">
+<p>The final look of the demo is largely controlled by the visual limitations of pico8, namely that the screen is constrained to a resolution of 128*128 pixels, and only 16 colours. This meant that dithering is used heavily to convey lighting in the terrain, gradients in the sunset, and more. It is a entertaining challenge to create an appealing visual style within these constraints.</p>
+<p>Various versions of this project have been created, including features on the terrain like trees, rocks, and characters, or a runtime-generated world map to assist navigation, both visible in the gif below. These features were removed in a from-scratch rewrite of the terrain rendering, aiming to improve performance and visuals, but will return in a future version. I would also love to including a raycasting engine to draw the solid walls of buildings.</p>
+<img class = imagewithinpost src="/blog/pico8terrain/objectsonterrain.gif">
+<p>I am keen to progress this demo in the future, and to see what features I can continue to squeeze into such tight constraints.</p>
+
+  </article>
+  <nav class="project-footer-nav">
+    <hr class="project-footer-rule">
+    <div class="project-footer-links">
+      
+        
+        
+        <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;" class="project-footer-home">Home</a>
+      
+      
+        
+          
+          
+          
+          <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;500-byte-flightsim&#x2F;" class="project-footer-next">Next project &rsaquo;</a>
+        
+      
+    </div>
+  </nav>
+</div>
+
+      </div>
+    </body>
+
+</html>
