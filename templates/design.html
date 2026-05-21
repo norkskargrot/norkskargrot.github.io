@@ -15,7 +15,7 @@
       </div>
 
       <div class="design-hero-actions">
-        <button class="btn-primary" onclick="var b=this;navigator.clipboard.writeText('{{ section.extra.contact_email }}').then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy my email';},2000)})">Copy my email</button>
+        <button class="btn-primary" onclick="var b=this;b.style.width=b.offsetWidth+'px';navigator.clipboard.writeText('{{ section.extra.contact_email }}').then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy my email';},2000)})">Copy my email</button>
         <a class="btn-outline" href="https://www.linkedin.com/in/nicdocker" target="_blank" rel="noopener">Visit my LinkedIn</a>
       </div>
 
