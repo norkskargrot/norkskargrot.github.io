@@ -15,7 +15,10 @@
       </div>
 
       <div class="design-hero-actions">
-        <button class="btn-primary" onclick="var b=this;b.style.width=b.offsetWidth+'px';navigator.clipboard.writeText('{{ section.extra.contact_email }}').then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy my email';},2000)})">Copy my email</button>
+        <button class="btn-primary">
+          <span class="btn-label-a">Copy my email</span>
+          <span class="btn-label-b" aria-hidden="true">Copied!</span>
+        </button>
         <a class="btn-outline" href="https://www.linkedin.com/in/nicdocker" target="_blank" rel="noopener">Visit my LinkedIn</a>
       </div>
 
@@ -86,6 +89,28 @@
   document.querySelector('.design-hero-scroll-hint').addEventListener('click', function(e) {
     e.preventDefault();
     document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  var copyBtn = document.querySelector('.btn-primary');
+  var labelA = copyBtn.querySelector('.btn-label-a');
+  var labelB = copyBtn.querySelector('.btn-label-b');
+  var copyTimer = null;
+
+  copyBtn.addEventListener('click', function() {
+    if (copyTimer) clearTimeout(copyTimer);
+    copyBtn.style.width = copyBtn.offsetWidth + 'px';
+    navigator.clipboard.writeText('{{ section.extra.contact_email }}');
+    labelA.style.opacity = '0';
+    labelA.style.filter = 'blur(3px)';
+    labelB.style.opacity = '1';
+    labelB.style.filter = 'blur(0px)';
+    copyTimer = setTimeout(function() {
+      labelA.style.opacity = '1';
+      labelA.style.filter = 'blur(0px)';
+      labelB.style.opacity = '0';
+      labelB.style.filter = 'blur(3px)';
+      copyTimer = null;
+    }, 2000);
   });
 </script>
 {% endblock content %}

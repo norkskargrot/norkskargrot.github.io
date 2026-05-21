@@ -273,6 +273,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   padding: 8px 24px 9px;
   background: var(--color-text-primary);
   color: #FFFFFF;
@@ -290,6 +291,20 @@ img {
 
 .btn-primary:hover {
   opacity: 0.85;
+}
+
+.btn-label-a,
+.btn-label-b {
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+.btn-label-b {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  filter: blur(3px);
+  pointer-events: none;
 }
 
 .btn-outline {
