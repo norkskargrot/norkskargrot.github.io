@@ -20,13 +20,7 @@
       <title>{% block title %}{{ config.title }}{% endblock title %}</title>
       <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
-      <!-- Swup for fancy page transitions -->
-      <script src="{{ get_url(path="swup.umd.js", trailing_slash=false) }}"></script>
-      <script>
-        const swup = new Swup();
-      </script>
-
-      <!-- CSS -->
+<!-- CSS -->
       <link rel="stylesheet" href="{{ get_url(path="poole.css", trailing_slash=false) }}">
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
       {% if config.generate_feeds %}
@@ -41,10 +35,8 @@
 
     <body>
 
-      <div id="swup">
-        {% block content %}
-        {% endblock content %}
-      </div>
+      {% block content %}
+      {% endblock content %}
     </body>
 
 </html>

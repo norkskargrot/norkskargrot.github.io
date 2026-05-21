@@ -68,7 +68,7 @@
       {% endfor %}
     </div>
 
-    <small class="design-outro">That's the end of my design case studies, but if you're interested I spend a lot of my free time working on games, both physical and digital. Take a look at some of them <a href="{{ config.base_url }}">here</a>.</small>
+    <small class="design-outro">That's the end of my design case studies, but if you're interested I spend a lot of my free time designing video games and board games. Take a look at some of them <a href="{{ config.base_url }}">here</a>.</small>
 
     <nav class="project-footer-nav">
       <hr class="project-footer-rule">
@@ -82,4 +82,10 @@
 
   </div>
 </div>
+<script>
+  document.querySelector('.design-hero-scroll-hint').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
 {% endblock content %}
