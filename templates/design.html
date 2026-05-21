@@ -10,7 +10,7 @@
       <img class="design-hero-avatar" src="{{ section.extra.avatar }}" alt="{{ section.extra.name }}">
 
       <div class="design-hero-text-block">
-        <h1>Hi, i'm Nic <img class="design-hero-wave" src="/images/hand-wave.png" alt=""></h1>
+        <h1><span class="hero-title-first"></span><span class="hero-wave-group"><img class="design-hero-wave" src="/images/hand-wave.png" alt="">,</span> <span class="hero-title-rest"></span></h1>
         <small>{{ section.extra.bio }}</small>
       </div>
 
@@ -90,6 +90,69 @@
     e.preventDefault();
     document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
   });
+
+  // Entrance animation
+  (function() {
+    var avatar      = document.querySelector('.design-hero-avatar');
+    var titleFirst  = document.querySelector('.hero-title-first');
+    var titleRest   = document.querySelector('.hero-title-rest');
+    var wave        = document.querySelector('.hero-wave-group');
+    var bio        = document.querySelector('.design-hero-text-block small');
+    var actions    = document.querySelector('.design-hero-actions');
+    var scrollHint = document.querySelector('.design-hero-scroll-hint');
+
+    avatar.style.opacity     = '0';
+    wave.style.opacity       = '0';
+    bio.style.opacity        = '0';
+    actions.style.opacity    = '0';
+    scrollHint.style.opacity = '0';
+    titleFirst.textContent   = '';
+    titleRest.textContent    = '';
+
+    var words = [
+      { text: "Hi",   container: titleFirst },
+      { text: "i'm",  container: titleRest },
+      { text: "Nic",  container: titleRest }
+    ];
+    var wordDelays = [0, 1000, 1100];
+
+    words.forEach(function(w) {
+      var s = document.createElement('span');
+      s.textContent = w.text + ' ';
+      s.style.opacity = '0';
+      s.style.transition = 'opacity 0.35s ease';
+      w.container.appendChild(s);
+    });
+
+    var wordSpans = document.querySelectorAll('.hero-title-first span, .hero-title-rest span');
+
+    setTimeout(function() {
+      avatar.style.transition = 'opacity 0.7s ease';
+      avatar.style.opacity = '1';
+    }, 500);
+
+    setTimeout(function() {
+      wordSpans.forEach(function(s, idx) {
+        setTimeout(function() {
+          s.style.opacity = '1';
+          if (idx === 0) {
+            wave.style.transition = 'opacity 0.35s ease';
+            wave.style.opacity = '1';
+          }
+          if (idx === wordSpans.length - 1) {
+            setTimeout(function() {
+              bio.style.transition        = 'opacity 0.5s ease';
+              bio.style.opacity           = '1';
+              actions.style.transition    = 'opacity 0.5s ease';
+              actions.style.opacity       = '1';
+              scrollHint.style.transition = 'opacity 0.5s ease';
+              scrollHint.style.opacity    = '1';
+            }, 450);
+          }
+        }, wordDelays[idx]);
+      });
+    }, 1050);
+  })();
 
   var copyBtn = document.querySelector('.btn-primary');
   var labelA = copyBtn.querySelector('.btn-label-a');
