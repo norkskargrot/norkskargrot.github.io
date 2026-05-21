@@ -8,7 +8,7 @@ page_template = "page.html"
 avatar = "/images/profilePicture.png"
 name = "Nic Docker"
 role = "Product designer"
-bio = "I've spent the past 6 years working with startups to develop great ideas into great products. I love working across design disciplines, with experience including UX & UI, brand, 3D, games and more."
+bio = "I’m a product designer who’s spent the past 6 years working with startups to develop great ideas into great products. I love disciplinary variety in my work, often working across UX, UI, brand, 3D design, and more."
 contact_text = "I'd love to hear from you, get in touch by"
 contact_email = "nick@dockerz.net"
 +++

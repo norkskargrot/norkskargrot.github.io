@@ -1,8 +1,8 @@
 +++
-title = "Perps trading"
+title = "Infinex Perps"
 date = 2026-05-11
 weight = 0
-description = "Designing a data-dense interface for professional traders to aggregate decentralized exchanges and take advantage of the UX improvements enabled by the Infinex platform."
+description = "Designing a data-dense interface for professional traders, taking advantage of the crypto UX improvements enabled by the Infinex platform."
 template = "page.html"
 [extra]
 headerimage = "/design/perps/og-image.png"
