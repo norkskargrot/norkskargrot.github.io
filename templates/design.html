@@ -86,6 +86,13 @@
   </div>
 </div>
 <script>
+  var waveImg = document.querySelector('.design-hero-wave');
+  waveImg.addEventListener('mouseenter', function() {
+    waveImg.style.animation = 'none';
+    waveImg.offsetWidth;
+    waveImg.style.animation = 'hero-wave 0.7s ease-in-out 0s 1 both';
+  });
+
   document.querySelector('.design-hero-scroll-hint').addEventListener('click', function(e) {
     e.preventDefault();
     document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
@@ -138,6 +145,7 @@
           if (idx === 0) {
             wave.style.transition = 'opacity 0.35s ease';
             wave.style.opacity = '1';
+            document.querySelector('.design-hero-wave').classList.add('is-waving');
           }
           if (idx === wordSpans.length - 1) {
             setTimeout(function() {
@@ -147,7 +155,7 @@
               actions.style.opacity       = '1';
               scrollHint.style.transition = 'opacity 0.5s ease';
               scrollHint.style.opacity    = '1';
-            }, 450);
+            }, 900);
           }
         }, wordDelays[idx]);
       });
