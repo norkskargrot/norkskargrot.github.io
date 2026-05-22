@@ -7,7 +7,13 @@
 
   <section class="design-hero">
     <div class="design-hero-content">
-      <img class="design-hero-avatar" src="{{ section.extra.avatar }}" alt="{{ section.extra.name }}">
+      <div class="avatar-stack">
+        <img class="avatar-card" src="/images/profile_pictures/5.png" alt="">
+        <img class="avatar-card" src="/images/profile_pictures/4.png" alt="">
+        <img class="avatar-card" src="/images/profile_pictures/3.png" alt="">
+        <img class="avatar-card" src="/images/profile_pictures/2.png" alt="">
+        <img class="avatar-card" src="/images/profile_pictures/1.png" alt="{{ section.extra.name }}">
+      </div>
 
       <div class="design-hero-text-block">
         <h1><span class="hero-title-first"></span><span class="hero-wave-group"><img class="design-hero-wave" src="/images/hand-wave.png" alt="">,</span> <span class="hero-title-rest"></span></h1>
@@ -86,6 +92,41 @@
   </div>
 </div>
 <script>
+  var stackAnimating = false;
+  document.querySelector('.avatar-stack').addEventListener('click', function() {
+    if (stackAnimating) return;
+    stackAnimating = true;
+
+    var stack = this;
+    var cards = Array.from(stack.children);
+    var front = cards[cards.length - 1];
+
+    cards.forEach(function(card, i) { card.style.zIndex = i + 1; });
+
+    // Phase 1: slide front card to the left
+    front.style.transition = 'transform 0.18s ease-in';
+    front.style.transform = 'translateX(-120px) rotate(8deg)';
+
+    front.addEventListener('transitionend', function onLeave() {
+      front.removeEventListener('transitionend', onLeave);
+
+      stack.insertBefore(front, stack.firstElementChild);
+      front.style.zIndex = '0';
+
+      front.getBoundingClientRect();
+
+      // Phase 2: slide back to centre, behind the stack
+      front.style.transition = 'transform 0.25s ease-out';
+      front.style.transform = '';
+
+      front.addEventListener('transitionend', function onReturn() {
+        front.removeEventListener('transitionend', onReturn);
+        Array.from(stack.children).forEach(function(c) { c.style.zIndex = ''; });
+        stackAnimating = false;
+      });
+    });
+  });
+
   var waveImg = document.querySelector('.design-hero-wave');
   waveImg.addEventListener('mouseenter', function() {
     waveImg.style.animation = 'none';
@@ -100,7 +141,7 @@
 
   // Entrance animation
   (function() {
-    var avatar      = document.querySelector('.design-hero-avatar');
+    var avatar      = document.querySelector('.avatar-stack');
     var titleFirst  = document.querySelector('.hero-title-first');
     var titleRest   = document.querySelector('.hero-title-rest');
     var wave        = document.querySelector('.hero-wave-group');
