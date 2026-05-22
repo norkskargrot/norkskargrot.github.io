@@ -104,7 +104,7 @@
     cards.forEach(function(card, i) { card.style.zIndex = i + 1; });
 
     // Phase 1: slide front card to the left
-    front.style.transition = 'transform 0.18s ease-in';
+    front.style.transition = 'transform 0.2s ease-in-out';
     front.style.transform = 'translateX(-120px) rotate(8deg)';
 
     front.addEventListener('transitionend', function onLeave() {
@@ -116,7 +116,7 @@
       front.getBoundingClientRect();
 
       // Phase 2: slide back to centre, behind the stack
-      front.style.transition = 'transform 0.25s ease-out';
+      front.style.transition = 'transform 0.3s ease-in-out';
       front.style.transform = '';
 
       front.addEventListener('transitionend', function onReturn() {
