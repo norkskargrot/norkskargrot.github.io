@@ -260,6 +260,8 @@ img {
   object-fit: cover;
   transform-origin: center center;
   transition: transform 0.3s ease-out;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .avatar-card:last-child {
@@ -391,6 +393,14 @@ img {
 .design-hero-scroll-hint:active {
   color: inherit;
   text-decoration: none;
+}
+
+.design-hero-scroll-hint svg {
+  transition: transform 0.2s ease-out;
+}
+
+.design-hero-scroll-hint:hover svg {
+  transform: translateY(4px);
 }
 
 .design-inner {
@@ -673,10 +683,6 @@ img {
 
   .home-inner {
     gap: 40px;
-  }
-
-  h1 {
-    font-size: var(--text-3xl);
   }
 
   .home-avatar {

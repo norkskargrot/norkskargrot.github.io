@@ -149,6 +149,16 @@
     var actions    = document.querySelector('.design-hero-actions');
     var scrollHint = document.querySelector('.design-hero-scroll-hint');
 
+    // Skip animation when returning from a sub-page
+    var ref = document.referrer;
+    var isFromSubPage = ref.indexOf(window.location.host + '/design/') !== -1 &&
+      !ref.endsWith('/design/');
+    if (isFromSubPage) {
+      titleFirst.textContent = 'Hi ';
+      titleRest.textContent  = "i'm Nic ";
+      return;
+    }
+
     avatar.style.opacity     = '0';
     wave.style.opacity       = '0';
     bio.style.opacity        = '0';
@@ -190,13 +200,17 @@
           }
           if (idx === wordSpans.length - 1) {
             setTimeout(function() {
-              bio.style.transition        = 'opacity 0.5s ease';
-              bio.style.opacity           = '1';
-              actions.style.transition    = 'opacity 0.5s ease';
-              actions.style.opacity       = '1';
+              bio.style.transition     = 'opacity 0.5s ease';
+              bio.style.opacity        = '1';
+            }, 900);
+            setTimeout(function() {
+              actions.style.transition = 'opacity 0.5s ease';
+              actions.style.opacity    = '1';
+            }, 1100);
+            setTimeout(function() {
               scrollHint.style.transition = 'opacity 0.5s ease';
               scrollHint.style.opacity    = '1';
-            }, 900);
+            }, 1300);
           }
         }, wordDelays[idx]);
       });
