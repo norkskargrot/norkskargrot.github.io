@@ -267,19 +267,19 @@ img {
 }
 
 .avatar-stack:hover .avatar-card:nth-last-child(2) {
-  transform: translateX(22px) rotate(5deg);
+  transform: translateX(22px) rotate(4deg);
 }
 .avatar-stack:hover .avatar-card:nth-last-child(3) {
-  transform: translateX(40px) rotate(-7deg);
+  transform: translateX(40px) rotate(8deg);
 }
 .avatar-stack:hover .avatar-card:nth-last-child(4) {
-  transform: translateX(55px) rotate(3deg);
+  transform: translateX(55px) rotate(12deg);
 }
 .avatar-stack:hover .avatar-card:nth-last-child(5) {
-  transform: translateX(67px) rotate(-5deg);
+  transform: translateX(67px) rotate(16deg);
 }
 .avatar-stack:hover .avatar-card:nth-last-child(6) {
-  transform: translateX(76px) rotate(2deg);
+  transform: translateX(76px) rotate(20deg);
 }
 
 .design-hero-text-block {
