@@ -149,16 +149,6 @@
     var actions    = document.querySelector('.design-hero-actions');
     var scrollHint = document.querySelector('.design-hero-scroll-hint');
 
-    // Skip animation when returning from a sub-page
-    var ref = document.referrer;
-    var isFromSubPage = ref.indexOf(window.location.host + '/design/') !== -1 &&
-      !ref.endsWith('/design/');
-    if (isFromSubPage) {
-      titleFirst.textContent = 'Hi ';
-      titleRest.textContent  = "i'm Nic ";
-      return;
-    }
-
     avatar.style.opacity     = '0';
     wave.style.opacity       = '0';
     bio.style.opacity        = '0';
