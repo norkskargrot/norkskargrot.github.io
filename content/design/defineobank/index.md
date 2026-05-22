@@ -1,7 +1,7 @@
 +++
-title = "Defi neobank"
+title = "Neobank"
 weight = 2
-description = "Creating a mobile-first banking app for a neobank startup, focusing on building an easy entry point for users unfamiliar with decentralised finance to take advantage of high-return stablecoin staking."
+description = "Creating a mobile-first banking app for a banking startup, focused on being an easy entry point to high-return stablecoin staking for users unfamiliar with defi or crypto."
 template = "page.html"
 [extra]
 headerimage = "/design/defineobank/og-image.png"
