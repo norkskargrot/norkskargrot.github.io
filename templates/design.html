@@ -174,37 +174,46 @@
 
     var wordSpans = document.querySelectorAll('.hero-title-first span, .hero-title-rest span');
 
-    setTimeout(function() {
-      avatar.style.transition = 'opacity 0.7s ease';
-      avatar.style.opacity = '1';
-    }, 500);
+    function startAnimation() {
+      setTimeout(function() {
+        avatar.style.transition = 'opacity 0.7s ease';
+        avatar.style.opacity = '1';
+      }, 500);
 
-    setTimeout(function() {
-      wordSpans.forEach(function(s, idx) {
-        setTimeout(function() {
-          s.style.opacity = '1';
-          if (idx === 0) {
-            wave.style.transition = 'opacity 0.35s ease';
-            wave.style.opacity = '1';
-            document.querySelector('.design-hero-wave').classList.add('is-waving');
-          }
-          if (idx === wordSpans.length - 1) {
-            setTimeout(function() {
-              bio.style.transition     = 'opacity 0.5s ease';
-              bio.style.opacity        = '1';
-            }, 900);
-            setTimeout(function() {
-              actions.style.transition = 'opacity 0.5s ease';
-              actions.style.opacity    = '1';
-            }, 1100);
-            setTimeout(function() {
-              scrollHint.style.transition = 'opacity 0.5s ease';
-              scrollHint.style.opacity    = '1';
-            }, 1300);
-          }
-        }, wordDelays[idx]);
-      });
-    }, 1050);
+      setTimeout(function() {
+        wordSpans.forEach(function(s, idx) {
+          setTimeout(function() {
+            s.style.opacity = '1';
+            if (idx === 0) {
+              wave.style.transition = 'opacity 0.35s ease';
+              wave.style.opacity = '1';
+              document.querySelector('.design-hero-wave').classList.add('is-waving');
+            }
+            if (idx === wordSpans.length - 1) {
+              setTimeout(function() {
+                bio.style.transition     = 'opacity 0.5s ease';
+                bio.style.opacity        = '1';
+              }, 900);
+              setTimeout(function() {
+                actions.style.transition = 'opacity 0.5s ease';
+                actions.style.opacity    = '1';
+              }, 1100);
+              setTimeout(function() {
+                scrollHint.style.transition = 'opacity 0.5s ease';
+                scrollHint.style.opacity    = '1';
+              }, 1300);
+            }
+          }, wordDelays[idx]);
+        });
+      }, 1050);
+    }
+
+    var imagePromises = Array.from(avatar.querySelectorAll('.avatar-card')).map(function(img) {
+      if (img.complete) return Promise.resolve();
+      return new Promise(function(resolve) { img.addEventListener('load', resolve, { once: true }); });
+    });
+
+    Promise.all(imagePromises.concat([document.fonts.ready])).then(startAnimation);
   })();
 
   var copyBtn = document.querySelector('.btn-primary');
