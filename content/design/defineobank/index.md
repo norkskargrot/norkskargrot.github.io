@@ -1,6 +1,6 @@
 +++
 title = "Neobank"
-weight = 2
+weight = 4
 description = "Creating a mobile-first banking app for a banking startup, focused on being an easy entry point to high-return stablecoin staking for users unfamiliar with defi or crypto."
 template = "page.html"
 [extra]

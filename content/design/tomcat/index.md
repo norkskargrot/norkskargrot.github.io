@@ -1,6 +1,6 @@
 +++
 title = "Tomcat"
-weight = 2
+weight = 5
 description = "Creating an online dapp and marketing site for a brand new defi loaning protocol."
 template = "page.html"
 [extra]

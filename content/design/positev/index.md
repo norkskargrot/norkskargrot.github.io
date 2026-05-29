@@ -1,6 +1,6 @@
 +++
 title = "Positev"
-weight = 3
+weight = 6
 description = "A short two-week sprint, creating initial user flows and a light branding touch for a startup electric vehicle infrastructure company."
 template = "page.html"
 [extra]

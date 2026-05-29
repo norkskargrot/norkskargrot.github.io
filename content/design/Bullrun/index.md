@@ -1,7 +1,7 @@
 +++
 title = "Bullrun"
 date = 2026-05-11
-weight = 2
+weight = 1
 description = "A fantasy football inspired card game designed to emulate crypto trading with real-world market data in an accessible and low-risk way."
 template = "page.html"
 [extra]
@@ -32,5 +32,5 @@ It was essential that the design, dev, and release cycle for the first version o
 <img class="xlimagewithinpost" src="/design/bullrun/cards.png" alt="Card Designs">
 <img class="xlimagewithinpost" src="/design/bullrun/mobile-screens.png" alt="Mobile Screens">
 
-# Outcome
+## Outcome
 The release of bullrun was a success, bringing the Infinex app to the forefront of user's minds during a quiet period in the crypto market. At it's peak, the game reached 15,000 daily active players, representing the largest spike in the Infinex's user and activity growth that had been seen thus far in the project's lifetime. The game continued to be updated for several months after it's release with new additions to the mechanics, keeping it a fresh play experience.
