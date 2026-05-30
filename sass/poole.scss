@@ -844,3 +844,58 @@ img {
   height: 20px;
   display: block;
 }
+
+/* ─────────────────────────────────────────
+   Design page footer
+───────────────────────────────────────── */
+
+.design-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px 16px;
+  gap: 16px;
+}
+
+.design-footer-img {
+  width: 520px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.design-footer-title {
+  margin: 0;
+}
+
+.design-footer-desc {
+  max-width: 480px;
+  margin: 0;
+}
+
+.design-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.design-footer-link img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  transition: transform 0.2s ease-out;
+}
+
+.design-footer-link:hover img {
+  transform: translateX(4px);
+}
+
+.design-footer-link:hover {
+  color: rgba(0, 0, 0, 1);
+}
