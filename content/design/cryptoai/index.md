@@ -29,3 +29,4 @@ We discovered early on in the design process that while it made complete sense f
 As such, a key design decision we made was that when acting with a user's main wallet the agent is only able to propose transactions for a user to then view and execute. Once trust has been built, a user is then able to optionally delegate funds in a separate wallet to be under the agent's control more directly.
 
 <img class="xlimagewithinpost" src="/design/cryptoai/mobile-flow.png" alt="User flows">
+<img class="xlimagewithinpost" src="/design/cryptoai/Suggestions.png" alt="AI portfolio suggestions">
