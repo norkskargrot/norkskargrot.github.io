@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Google Analytics tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFM54NSSW0"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BFM54NSSW0');
+      </script>
+
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Tiny Sumo | Nic Docker</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<!-- CSS -->
+      <link rel="stylesheet" href="https://nic.dockerz.net/poole.css">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+      
+
+      
+      
+    </head>
+
+    <body>
+
+      
+<div class="post-page">
+  <header class="mobile-sticky-header" id="mobileHeader">
+    
+      
+      
+      <a class="back-btn-mobile" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;"><img src="/icons/back.svg" alt="Back"></a>
+    
+    <span class="mobile-header-title">Tiny Sumo</span>
+  </header>
+  
+    
+    
+    <a class="back-btn" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;"><img src="/icons/back.svg" alt="Back"></a>
+  
+  <article class="post-article">
+    <h1 id="pageMainTitle">Tiny Sumo</h1>
+    <p class="post-article-subtitle">A minimal rules, minimal components board game that fits on a single card.</p>
+    <p>Inspired by various board game design challenges online where participants created games with minimal rules or minimal components, I created a game which would fit on a single playing card, to act as a business card of sorts for myself.</p>
+<h2 id="self-imposed-requirements">Self-Imposed Requirements</h2>
+<ul>
+<li>The game should fit on a single playing card, with the board on one side and the rules on the other. No external resources should be required for someone to learn to play the game.</li>
+<li>The game is allowed to require additional components for the playing of the game itself, but they should be standard components which most board gamers have easy access to.</li>
+<li>The game should be quick to play (5-15 minutes) but have some depth, requiring some strategic thinking while playing.</li>
+</ul>
+<h2 id="the-final-product">The Final Product</h2>
+<p>The two sides of the game board, one showing the board which the game is played on and the other the rules:</p>
+<img class = imagewithinpost src="/blog/tinysumo/bothsides.png">
+<h2 id="demo-of-play">Demo of play</h2>
+<p>I have also created a small demo of play, just containing a walkthrough of a single round of the game. While the game rules are entirely contained on the back of the card, this is a convenient reference if players are still confused. This demo can be found <a href="/blog/tinysumo/rules">here</a>.</p>
+<h2 id="the-gameplay">The Gameplay</h2>
+<p>I would recommend playing the game before reading this section if you can, but no pressure.</p>
+<p>I am quite happy with how the game plays, though with a few caveats. From the beginning I knew that the idea of a competitive duelling game appealed to me, and to facilitate this a dice-drafting mechanic felt appropriate. This is where players roll a shared dice pool and take turns selecting dice from it. This mechanic was relatively simple to explain and, when managed carefully, allowed for great strategic depth, forcing players to make difficult decisions about which dice to prioritise and which to allow their opponent to have.</p>
+<p>The mechanic of players pushing each other back and forth also turned out to be a great decision, as it creates and sense of drama when a player is near the edge and fighting against a loss, or when a good round pushes a player all the way across the board. Initially some versions were tested where the board was a two-dimensional grid which players could move around, but this added needless complexity for little strategic benefit.</p>
+<p>One aspect of the gameplay which I would like to explore improvements to in the future is the difficulty. While the game rules are simple, at many points in the game players can find themselves in a brain melting logic puzzle, where a single decision has a long string of consequences that must be considered, resulting in a win or a loss. This can be a good thing; one of the goals set out initially was to create a strategically deep game, but it can also be a lot to consider, particularly for a first-time player. I would love to find a way to include an easy-mode or similar, where the current game remains as-is but there is also an option for a strategically simpler experience.</p>
+<h2 id="the-process">The Process</h2>
+<p>This game went through many iterations in the game's design, the layout and graphic design of the card, and finally in the rules clarity. With the constraints I had laid out for myself these three normally more separated elements became closely interlinked, as rules changes would mean more or less space would be required for rules on the card, and vice versa. Rules writing and the design of the game became a tightly interlinked back-and forth until it approached a happy state.</p>
+<p>Rules clarity was a significant issue also. With initial versions of the game many playtesters had trouble learning to play without assistance from the card back alone, and many iterations were required to resolve this. I believe there is still room for improvement on this front, and more cleverly phrased rules could assist with new players understanding.</p>
+
+  </article>
+  <nav class="project-footer-nav">
+    <hr class="project-footer-rule">
+    <div class="project-footer-links">
+      
+        
+        
+        <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;" class="project-footer-home">Home</a>
+      
+      
+        <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;grappleball&#x2F;" class="project-footer-next">Next project &rsaquo;</a>
+      
+    </div>
+  </nav>
+</div>
+<script>
+(function () {
+  var header = document.getElementById('mobileHeader');
+  var h1 = document.getElementById('pageMainTitle');
+  if (!header || !h1) return;
+  var observer = new IntersectionObserver(function (entries) {
+    header.classList.toggle('title-visible', !entries[0].isIntersecting);
+  }, { threshold: 0, rootMargin: '-60px 0px 0px 0px' });
+  observer.observe(h1);
+}());
+</script>
+
+    </body>
+
+</html>

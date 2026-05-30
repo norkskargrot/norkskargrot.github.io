@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Google Analytics tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFM54NSSW0"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BFM54NSSW0');
+      </script>
+
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Mini Mage | Nic Docker</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<!-- CSS -->
+      <link rel="stylesheet" href="https://nic.dockerz.net/poole.css">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+      
+
+      
+      
+    </head>
+
+    <body>
+
+      
+<div class="post-page">
+  <header class="mobile-sticky-header" id="mobileHeader">
+    
+      
+      
+      <a class="back-btn-mobile" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;"><img src="/icons/back.svg" alt="Back"></a>
+    
+    <span class="mobile-header-title">Mini Mage</span>
+  </header>
+  
+    
+    
+    <a class="back-btn" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;"><img src="/icons/back.svg" alt="Back"></a>
+  
+  <article class="post-article">
+    <h1 id="pageMainTitle">Mini Mage</h1>
+    <p class="post-article-subtitle">Spellcrafting and terrain manipulation in an isometric world.</p>
+    <p>This project was a prototype for a unique spellcrafting system, where a player is given immense control over the magic available to them.</p>
+<h2 id="playable-demo">Playable Demo:</h2>
+<p>Controls;</p>
+<ul>
+<li>Use the arrow keys to move</li>
+<li>Press each of the two action buttons (&quot;Z&quot; and &quot;X&quot; on pc, or the onscreen &quot;O&quot; and &quot;X&quot; buttons on mobile) to use your two equipped spells.</li>
+<li>Press the two action buttons simultaneously to open the spellcrafting menu and change your equipped spells. More details on how spellcrafting works below.</li>
+</ul>
+<iframe class= "pico8player" src="/blog/minimage/minimage.html"... ></iframe>
+<p>I have always been interested in unique magic systems in video games, particularly those which give the player a lot of customisation over the spells which are available to them. This is my ongoing attempt to create my own system. The basic concept is that when creating a spell, players choose two basic parameters; the type and the shape.</p>
+<p>The spell's type controls the effects which the spell has. For example an earth spell will leave piles of dirt, allowing a player to create barricades, a fire spell will burn trees, buildings, and enemies, or a poison spell will create clouds of gas, damaging all who pass through it.</p>
+<p>The shape of a spell controls the form it takes when the player uses it, for example a projectile spell will be fired forward, affecting anything it hits, or leap spell will launch the player across the map, exploding wherever they land.</p>
+<p>This spellcrafting system is easy for a player to understand, but allows for fairly deep customisation in how they can interact with the game world and the enemies they encounter.</p>
+<p>The rendering of the world in this demo is also of note, as a custom isometric renderer had to be built to support the desired graphical style. This renders each tile separately, allowing for runtime modification of the map by the player, through the use of their spells.</p>
+<p>In the future I would like to add another parameter to the spellcrafting, called &quot;modifiers&quot;. These would power up or power down certain aspects of the spell, allowing for further cutomisation. This could for example include increasing the spell's range for reduced damage, or increasing it's mana cost in exchange for allowing it to pass through barriers.</p>
+
+  </article>
+  <nav class="project-footer-nav">
+    <hr class="project-footer-rule">
+    <div class="project-footer-links">
+      
+        
+        
+        <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;" class="project-footer-home">Home</a>
+      
+      
+        <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;miscpico8projects&#x2F;" class="project-footer-next">Next project &rsaquo;</a>
+      
+    </div>
+  </nav>
+</div>
+<script>
+(function () {
+  var header = document.getElementById('mobileHeader');
+  var h1 = document.getElementById('pageMainTitle');
+  if (!header || !h1) return;
+  var observer = new IntersectionObserver(function (entries) {
+    header.classList.toggle('title-visible', !entries[0].isIntersecting);
+  }, { threshold: 0, rootMargin: '-60px 0px 0px 0px' });
+  observer.observe(h1);
+}());
+</script>
+
+    </body>
+
+</html>

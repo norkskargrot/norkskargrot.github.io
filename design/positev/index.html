@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Google Analytics tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFM54NSSW0"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BFM54NSSW0');
+      </script>
+
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Positev | Nic Docker</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<!-- CSS -->
+      <link rel="stylesheet" href="https://nic.dockerz.net/poole.css">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+      
+
+      
+      
+    </head>
+
+    <body>
+
+      
+<div class="post-page">
+  <header class="mobile-sticky-header" id="mobileHeader">
+    
+      
+      
+      <a class="back-btn-mobile" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;design&#x2F;"><img src="/icons/back.svg" alt="Back"></a>
+    
+    <span class="mobile-header-title">Positev</span>
+  </header>
+  
+    
+    
+    <a class="back-btn" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;design&#x2F;"><img src="/icons/back.svg" alt="Back"></a>
+  
+  <article class="post-article">
+    <h1 id="pageMainTitle">Positev</h1>
+    <p class="post-article-subtitle">A short two-week sprint, creating initial user flows and a light branding touch for a startup electric vehicle infrastructure company.</p>
+    <img class = imagewithinpost src="/design/positev/examplescreens.png">
+<h2 id="background">Background</h2>
+<p>The Positev startup aims to improve integration between the various discrete parts of the infrastructure involved in the rapidly growing electric vehicle market. Currently, car manufacturers, public EV charger providers, and home charging solutions exist on different networks, with communication between them limited. Positev is a foundational integration layer between all of these pieces, reducing cost and improving user experience for EV drivers.</p>
+<h2 id="design-engagement">Design Engagement</h2>
+<p>The two Positev founders come from an engineering background, and before looking for design input worked primarily on backend integrations of various aspects of the EV network, without any user-facing product. The first B2C component of the Positev vision was to create an app which integrated a parking booking and payment system with several different networks of EV chargers. This allows EV drivers to easily locate and reserve EV chargers, while also streamlining the parking payment system for non-EV drivers. My design input was required for:</p>
+<ul>
+<li>A light branding touch, to create an identity for Positev and the consumer-facing app.</li>
+<li>Strong user flows, focusing on simplicity in improving the current parking payment systems.</li>
+</ul>
+<p>This project was very tightly-scoped, with only a single two-week sprint of design time and no budget for formalised user testing.</p>
+<h2 id="brand-identity">Brand Identity</h2>
+<p>There was no existing brand identity for Positev, and so branding was begun from scratch. From a moodboard of the branding and logos of related companies, the team decided that they wanted a lighthearted and bright identity and a combination logo, bringing together the company name with a pictoral mark to identify them.</p>
+<p>I created a series of logo sketches, and converted the team's favorite concepts to more refined digital versions:</p>
+<img class = imagewithinpost src="/design/positev/brandsketches.png">
+<img class = imagewithinpost src="/design/positev/digitallogos.png">
+<p>The final decision by the founders was to move forward with the dark-mode background and green primary colour, combined with the pictoral mark of the car and charge cable combination.
+<img class = smallimagewithinpost src="/design/positev/positev.png"></p>
+<h2 id="user-flows">User Flows</h2>
+<p>The user flows were initially discussed in an exploration session with the founders. The key focus of these flows was to require minimal learning from the user. No user wants to spend mental energy learning to use a new parking system. From this exploration session I created three initial user flows.</p>
+<img class = imagewithinpost src="/design/positev/userflows.png">
+<h3 id="pre-paid-or-post-paid">Pre-paid or Post-paid?</h3>
+<p>The first two flows present two fundamentally different product models for how parking payment can work. In the first, a user pays for the time which they wish to park immediately after parking. In the second, a user pays for parking after returning to their car, based on the amount of time the car has been parked there. Each of these flows had benefits:</p>
+<ul>
+<li>Pre-paid parking before the parking period meant that a user only has to engage with the app once, when they initially park. Paying after returning to the car would instead require an initial engagement to confirm that they had parked in the location, and a second for payment at the end.</li>
+<li>Post-paid parking flows integrate paid EV chargers more easily, as the payment at the end can include the payment for the electricity used. A pre-paid system would have to have a second charger later for the power used. This is not a concern, however, if the chargers are either free to use or are paid based on time, rather than watts used.</li>
+<li>Post-paid verification added additional verification complications, as it is a requirement that the same user who signed into the parking space is the one conducting the sign out flow.</li>
+</ul>
+<p>After discussion the team decided to move forward with the pre-paid flow as many EV chargers are free to use, avoiding the primary concern with a post-paid flow.</p>
+<h3 id="moving-to-a-web-app">Moving to a Web-app</h3>
+<p>Initially the team was planning to create an installed mobile app which the users would interact with, as this would provide the benefit of saving user data more easily locally on their device. It was my recommendation, however, that they instead create a web-app accessed through the phone's browser. This had several benefits to the user experience:</p>
+<ul>
+<li>First-time users would not have to install an app to use the product, a significant hiccup to a streamlined onboarding flow.</li>
+<li>Users don't have an extra app on their phone, an annoyance to many customers.</li>
+</ul>
+<p>The flows could then also be simplified to allow for no user accounts, as paying for parking would simply require the license plate and a payment to be made (and potentially one-time sms verification), avoiding the original reason for an installed native app.</p>
+<p>The discussions of the presented user flows were positive, and I was to move forward with wireframe creation.</p>
+<h2 id="wireframes-and-interactive-prototype">Wireframes and Interactive Prototype</h2>
+<p>Ideally, I would have created low-fidelity wireframes without branding at this point, to take to user testing for additional data on the functionality of the user flows and the interface. Due to the very short design timelines, however, I was to move forward with branded wireframes to provide some short-term design direction for the developers.</p>
+<img class = imagewithinpost src="/design/positev/qrflow.png">
+<img class = imagewithinpost src="/design/positev/nonqrflow.png">
+<h2 id="project-outcome">Project Outcome</h2>
+<p>This initial design sprint proved immensely valuable to the Positev startup, crucial in such an early stage of the project in two key ways:</p>
+<ul>
+<li>The outlining of clear user flows provided direction to the engineering team, allowing them to focus front-end development on a user-facing MVP which provides a great user expereince.</li>
+<li>The creation of a strong brand identity and appealing high-fidelity wireframes added an important layer of professionalism to the founder's pitch decks, helping to land funding quickly to continue development.</li>
+</ul>
+
+  </article>
+  <nav class="project-footer-nav">
+    <hr class="project-footer-rule">
+    <div class="project-footer-links">
+      
+        
+        
+        <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;design&#x2F;" class="project-footer-home">Home</a>
+      
+      
+        
+          
+          
+          
+          <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;design&#x2F;perps&#x2F;" class="project-footer-next">Next project &rsaquo;</a>
+        
+      
+    </div>
+  </nav>
+</div>
+<script>
+(function () {
+  var header = document.getElementById('mobileHeader');
+  var h1 = document.getElementById('pageMainTitle');
+  if (!header || !h1) return;
+  var observer = new IntersectionObserver(function (entries) {
+    header.classList.toggle('title-visible', !entries[0].isIntersecting);
+  }, { threshold: 0, rootMargin: '-60px 0px 0px 0px' });
+  observer.observe(h1);
+}());
+</script>
+
+    </body>
+
+</html>

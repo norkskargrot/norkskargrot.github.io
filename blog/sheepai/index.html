@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Google Analytics tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFM54NSSW0"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BFM54NSSW0');
+      </script>
+
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Controlling sheep | Nic Docker</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<!-- CSS -->
+      <link rel="stylesheet" href="https://nic.dockerz.net/poole.css">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+      
+
+      
+      
+    </head>
+
+    <body>
+
+      
+<div class="post-page">
+  <header class="mobile-sticky-header" id="mobileHeader">
+    
+      
+      
+      <a class="back-btn-mobile" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;"><img src="/icons/back.svg" alt="Back"></a>
+    
+    <span class="mobile-header-title">Controlling sheep</span>
+  </header>
+  
+    
+    
+    <a class="back-btn" href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;"><img src="/icons/back.svg" alt="Back"></a>
+  
+  <article class="post-article">
+    <h1 id="pageMainTitle">Controlling sheep</h1>
+    <p class="post-article-subtitle">Creating a boids-based controller for sheep herding behavior.</p>
+    <img class = imagewithinpost src="/blog/sheepai/sheep.png">
+<p>Some of my friends and I have begun work on a game themed around Icelandic Shepherding, a peaceful experience where the player wanders the landscape finding and gathering their sheep. The first step i've taken in this project is to create a robust sheep AI which can provide all of the behavior the sheep in the game will need.</p>
+<h2 id="high-level-structure">High-level structure</h2>
+<p>I decided for this project to use a heavily modified boids algorithm, as it creates great looking flocking behaviour. This applies three forces to each sheep;</p>
+<ul>
+<li>Cohesion: Sheep steer towards other nearby sheep.</li>
+<li>Alignment: Sheep steer in the same direction as other nearby sheep.</li>
+<li>Avoidance: Sheep steer away from other nearby sheep who are too close.</li>
+</ul>
+<p>Additional behaviours are clearly required for our sheep however, including:</p>
+<ul>
+<li>Obstacle avoidance: Sheep should steer away from or around any obstacles in their way.</li>
+<li>Clearing finding: Sheep should steer towards open clearings, rather than hugging fences or staying near corners where they could be trapped by a predator.</li>
+<li>Predator avoidance: Sheep should steer away from predator or sheepdogs.</li>
+<li>Herd Finding: Sheep should seek out a herd if an individual or small group ends up separated.</li>
+<li>Grazing: Sheep should seek out grass and eat it.</li>
+</ul>
+<p>This is a lot of different forces all trying to influence how a single sheep moves and there will regularly be conflicts, with different forces pushing the sheep in different directions. In the boids algorithm these forces are balanced by having a &quot;strength&quot; variable for each force. Adjusting these strengths significantly changes the behaviour of the boids. For these sheep I will use a similar structure, combined with a state machine layered on top. I will have a strength variable for each force influencing the sheep's movement, but these strengths will be dynamically adjusted based on the current state.</p>
+<p>For example:</p>
+<ul>
+<li>A sheep in the grazing state will be primarily influenced by the Grazing vector, which guides them to nearby grass to eat. The cohesion and avoidance vectors also have some influence, stopping them from wandering too far from their herd and from running into other sheep.</li>
+<li>When they reach this grass, they move to the eating state; all of their influences are reduced, stopping their movement.</li>
+<li>All of a sudden they see a predator! In the stressed state, the three boids vectors are increased, causing the herd to gather and move as one. The grazing vector is reduced to zero, and the predator avoidance vector is increased.</li>
+<li>The obstacle avoidance vector should always remain fairly high for obvious reasons.</li>
+</ul>
+<h2 id="starting-with-boids">Starting with Boids</h2>
+<p>There are many great explanations of boids online, but i will provide a quick summary here. It begins with a single entity, which has a field of awareness within which other sheep will influence it's behavior. This is defined by a radius and an angle:
+<img class = smallimagewithinpost src="/blog/sheepai/awareness.svg"></p>
+<p>Three forces are then applied to the sheep, based on those in it's sight radius:</p>
+<ul>
+<li>Cohesion: Sheep steer towards other nearby sheep.
+<img class = smallimagewithinpost src="/blog/sheepai/cohesion.svg"></li>
+<li>Alignment: Sheep steer in the same direction as other nearby sheep.
+<img class = smallimagewithinpost src="/blog/sheepai/alignment.svg"></li>
+<li>Avoidance: Sheep steer away from other nearby sheep who are within a smaller avoidance radius.
+<img class = smallimagewithinpost src="/blog/sheepai/avoidance.svg"></li>
+</ul>
+<p>Appling these three forces, with manually controlled weightings, creates fantastic behavior, which can be seen in this gif:
+<img class = smallimagewithinpost src="/blog/sheepai/boids.gif"></p>
+<h2 id="obstacle-avoidance">Obstacle Avoidance</h2>
+<p>Obstacle avoidance is an interesting problem for these sheep, and i read about and implemented several steering algorithms in the process of finding one which worked well for this application. The final algorithm i'm using is a two-part solution, using two sets of raycasts.</p>
+<p>The first is a longer-distance raycast which detects any nearby obstacles in front of the sheep, and gently applies a force directing the sheep away from them. Each raycast adds it's direction multiplied by it's length before it hit an obstacle (or the maximum distance if it didn't hit) to the output direction, which is then normalised.
+<img class = smallimagewithinpost src="/blog/sheepai/obstacleavoid.svg"></p>
+<p>This force alone means that the sheep will avoid walls fairly well, though as you can see in the gif below they still hit and slide along walls in an undesirable way when the crowding of other sheep pushes them into it.
+<img class = smallimagewithinpost src="/blog/sheepai/hittingwalls.gif"></p>
+<p>To counteract this, a second force is added. This force is much stronger but occurs in a much smaller region around the sheep, stopping them from actually colliding with walls.
+<img class = smallimagewithinpost src="/blog/sheepai/collision.svg"></p>
+<p>This successfully stops the sheep from sliding along walls, but introduces some other undesirable behavior, which will be addressed in the next section:
+<img class = smallimagewithinpost src="/blog/sheepai/overcrowded.gif"></p>
+<h2 id="crowding">Crowding</h2>
+<p>You can see at the end of the last section that while the sheep are successfully avoiding obstacles, they are crowding up significantly when they reach choke-points in the map. We could increase the &quot;avoidance&quot; bias in the initial boids forces, but that would actually prevent them from moving through tight gaps as the force of the sheep pushing back would turn the sheep stuck behind around, splitting the herd. The desired behavior to match real-life sheep would be to have each sheep slow down, allowing those in front to pass through before moving forward themselves. To this end, each sheep checks how many sheep are in it's field of view and limits it's maximum speed proportional to this value. This results in much improved behavior during all points of herding, but particularly in map chokepoints.</p>
+<img class = smallimagewithinpost src="/blog/sheepai/crowdslowdown.gif">
+<h2 id="moving-to-navmeshes">Moving to Navmeshes</h2>
+<p>Up until this point, all of the sheep AI work has been based on two fairly significant assumptions.</p>
+<ol>
+<li>The ground which the sheep walk on is flat.</li>
+<li>The obstacles which the sheep have to avoid are vertical walls.</li>
+</ol>
+<p>This clearly will not be adequate for our game, as the sheep need to traverse rolling hills and mountainsides while avoiding obstacles which aren't walls, such as cliffs or rivers. Our current raycasting system for obstacle avoidance will not work for these types of obstacles, and so adjustment is required.</p>
+<img class = smallimagewithinpost src="/blog/sheepai/hills.png"> 
+<p>Initially I investigated creating invisible colliders around these obstacles which the sheep could raycast into, but creating these colliders would be significant additional work when creating the map and terrain, which would be best avoided. Additionally, this doesn't solve the issue of obstacle raycasts colliding with a gentle slope which the sheep should be able to walk up.</p>
+<p>I then investigated sampling the terrain data for this information, using the slope of the terrain to determine whether an area was walkable or not, but this was a significant performance overhead for each sheep each frame.</p>
+<p>Finally, a much easier solution was found. By using the unity navmesh system, but not using the navmesh agent component, the sheep can still be controlled according to the boid (and other) forces, but can cast rays through the navmesh, rather than in the 3D physics environment. This means that all obstacle data can be managed by the navmesh, rather than colliders in the environment. Here you can see how the navmesh (in blue) looks on our rolling hills terrain.</p>
+<img class = smallimagewithinpost src="/blog/sheepai/navmesh.png"> 
+<p>I hadn't before considered using the navmesh in this way, rather than the conventional use of pathfinding, and will keep it in mind for future projects.</p>
+<h2 id="the-end-of-part-one">The end of part one</h2>
+<p>All of this leaves us with lovely sheep herding behavior, and we can watch sheep intelligently herd in complex environments while successfully avoiding obstacles.</p>
+<div class="youtubevideoplayer"><iframe width='100%' height='100%' src="https://www.youtube.com/embed/DGNgJEUMtnw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<p>There is much more to do, however. The sheep shouldn't be always moving and roaming about but instead stop to graze and relax, and then run to avoid predators when they arise, or when they are being herded. I will create a second part to this post, expanding on the behavior of these sheep.</p>
+
+  </article>
+  <nav class="project-footer-nav">
+    <hr class="project-footer-rule">
+    <div class="project-footer-links">
+      
+        
+        
+        <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;" class="project-footer-home">Home</a>
+      
+      
+        <a href="https:&#x2F;&#x2F;nic.dockerz.net&#x2F;blog&#x2F;picocad-hell&#x2F;" class="project-footer-next">Next project &rsaquo;</a>
+      
+    </div>
+  </nav>
+</div>
+<script>
+(function () {
+  var header = document.getElementById('mobileHeader');
+  var h1 = document.getElementById('pageMainTitle');
+  if (!header || !h1) return;
+  var observer = new IntersectionObserver(function (entries) {
+    header.classList.toggle('title-visible', !entries[0].isIntersecting);
+  }, { threshold: 0, rootMargin: '-60px 0px 0px 0px' });
+  observer.observe(h1);
+}());
+</script>
+
+    </body>
+
+</html>
