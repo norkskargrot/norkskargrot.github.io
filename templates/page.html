@@ -4,15 +4,25 @@
 
 {% block content %}
 <div class="post-page">
+  <header class="mobile-sticky-header" id="mobileHeader">
+    {% if page.ancestors %}
+      {% set parent_path = page.ancestors | last %}
+      {% set parent = get_section(path=parent_path) %}
+      <a class="back-btn-mobile" href="{{ parent.permalink }}"><img src="/icons/back.svg" alt="Back"></a>
+    {% else %}
+      <a class="back-btn-mobile" href="{{ config.base_url }}"><img src="/icons/back.svg" alt="Back"></a>
+    {% endif %}
+    <span class="mobile-header-title">{{ page.title }}</span>
+  </header>
   {% if page.ancestors %}
     {% set parent_path = page.ancestors | last %}
     {% set parent = get_section(path=parent_path) %}
-    <a class="back-btn" href="{{ parent.permalink }}">&lsaquo;</a>
+    <a class="back-btn" href="{{ parent.permalink }}"><img src="/icons/back.svg" alt="Back"></a>
   {% else %}
-    <a class="back-btn" href="{{ config.base_url }}">&lsaquo;</a>
+    <a class="back-btn" href="{{ config.base_url }}"><img src="/icons/back.svg" alt="Back"></a>
   {% endif %}
   <article class="post-article">
-    <h1>{{ page.title }}</h1>
+    <h1 id="pageMainTitle">{{ page.title }}</h1>
     {% if page.description %}<p class="post-article-subtitle">{{ page.description }}</p>{% endif %}
     {{ page.content | safe }}
   </article>
@@ -39,4 +49,15 @@
     </div>
   </nav>
 </div>
+<script>
+(function () {
+  var header = document.getElementById('mobileHeader');
+  var h1 = document.getElementById('pageMainTitle');
+  if (!header || !h1) return;
+  var observer = new IntersectionObserver(function (entries) {
+    header.classList.toggle('title-visible', !entries[0].isIntersecting);
+  }, { threshold: 0, rootMargin: '-60px 0px 0px 0px' });
+  observer.observe(h1);
+}());
+</script>
 {% endblock content %}
